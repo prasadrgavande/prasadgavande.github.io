@@ -18,8 +18,14 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+With over a decade of experience in the Information Technology sector, I specialize in the support and maintenance of back-office settlement systems within the Investment Banking industry. My expertise encompasses production support, development of new functionalities, resolution of system issues, and enhancements to existing systems to ensure operational excellence and reliability.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Throughout my career, I have successfully collaborated with diverse stakeholders across the APAC region, including departments such as Finance, Infrastructure, and Governance. My contributions have been instrumental in the development and ongoing maintenance of critical applications, including SharePoint, ServiceNow, Confluence, and JIRA.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I possess a solid foundation in C++ development and am adept at analyzing both functional and technical specifications. My skills extend to the programming, implementation, documentation, and testing of software applications.
+
+My technical proficiency spans a range of programming languages and technologies, including C++, C#, shell scripting, RESTful Web Services, and web-based technologies such as HTML, CSS, and JavaScript.
+
+I am eager to embrace new challenges and am committed to leveraging my skills to contribute to the success of my team.
+
+For further discussion or opportunities, I can be reached at prasad.gavande@live.com or via phone at +852 54931218.
