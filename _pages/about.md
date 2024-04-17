@@ -15,14 +15,16 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-With over a decade of experience in the Information Technology sector, I specialize in the support and maintenance of back-office settlement systems within the Investment Banking industry. My expertise encompasses production support, development of new functionalities, resolution of system issues, and enhancements to existing systems to ensure operational excellence and reliability.
+I am a seasoned Software Engineer with a strong background in developing and maintaining settlement systems for the Investment Banking sector. With over ten years of experience, my career has been marked by a dedication to creating robust back-office solutions that drive operational success.
 
-Throughout my career, I have successfully collaborated with diverse stakeholders across the APAC region, including departments such as Finance, Infrastructure, and Governance. My contributions have been instrumental in the development and ongoing maintenance of critical applications, including SharePoint, ServiceNow, Confluence, and JIRA.
+My technical journey includes significant contributions to the development of new functionalities, addressing system issues, and enhancing existing applications to meet the evolving needs of the business. While I have a history of providing production support, my current role is centered on settlement system development, ensuring these critical systems operate with precision and efficiency.
 
-I possess a solid foundation in C++ development and am adept at analyzing both functional and technical specifications. My skills extend to the programming, implementation, documentation, and testing of software applications.
+In previous roles, I have worked with applications like SharePoint, ServiceNow, Confluence, and JIRA. However, my focus has shifted to exclusively support the settlement domain, where I apply my extensive knowledge in C++ and other programming languages.
 
-My technical proficiency spans a range of programming languages and technologies, including C++, C#, shell scripting, RESTful Web Services, and web-based technologies such as HTML, CSS, and JavaScript.
+Skilled in C++, C#, and shell scripting, I also bring experience with RESTful Web Services and web technologies such as HTML, CSS, and JavaScript. My approach involves thorough analysis, meticulous programming, and comprehensive testing to deliver high-quality software solutions.
 
-I am eager to embrace new challenges and am committed to leveraging my skills to contribute to the success of my team.
+I am always ready to tackle new challenges and am keen to apply my expertise to enhance team performance and achieve collective goals.
 
-For further discussion or opportunities, I can be reached at prasad.gavande@live.com or via phone at +852 54931218.
+Should you wish to discuss opportunities or collaborations, feel free to contact me at prasad.gavande@live.com or call me at +852 54931218.
+
+---
