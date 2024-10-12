@@ -2,18 +2,18 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Prasad Rajesh Gavande
     - name: Date of Birth
-      value: 14th March 1879
+      value: 12th Oct 1990
     - name: Languages
-      value: English, German
+      value: English
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: B.E. Computer
+      institution: University of Pune, India
+      year: 2012
       description:
         - Description 1.
         - Description 2.
