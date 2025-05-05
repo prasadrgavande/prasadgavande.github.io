@@ -54,8 +54,8 @@ It defines include paths, compiler settings, and standard versions.
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/include",                                  // Add your header directory
-                "${workspaceFolder}/libs/**"                                   // Add third party library directory
+                "${workspaceFolder}/include",         // Add your header directory
+                "${workspaceFolder}/libs/**"              // Add third party library directory
             ],
             "defines": [],
             "compilerPath": "D:\\Installation\\mingw\\mingw64\\bin\\g++.exe",  // Add path of your compiler
@@ -79,14 +79,14 @@ This file contains path of header files, source files, third party libraries (if
         {
             "type": "shell",
             "label": "Build Main",
-            "command": "D:\\Installation\\mingw\\mingw64\\bin\\g++.exe",          //add path of your compiler
+            "command": "D:\\Installation\\mingw\\mingw64\\bin\\g++.exe",    //add path of your compiler
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "main.cpp",                                                       //by default run main file
-                "${workspaceFolder}/src/*.cpp",                                   //additional files
-                 "-I${workspaceFolder}/include",                                  // Include directory flag
-                 "-I${workspaceFolder}/libs/spdlog/include",                      // Include third party library
+                "main.cpp",   //by default run main file
+                "${workspaceFolder}/src/*.cpp",            //additional files
+                 "-I${workspaceFolder}/include",         // Include directory flag
+                 "-I${workspaceFolder}/libs/spdlog/include", // Include third party library
                 "-o",
                 "${workspaceFolder}/build/main.exe"
             ],
@@ -193,6 +193,7 @@ int main(int argc, char const *argv[])
 As mentioned above, all our header files will be inside "include" folder. so create one for `school.h`
 
 >**school.h**
+
 ```c++
 #include<iostream>
 using namespace std;
@@ -204,8 +205,11 @@ namespace school{
     };
 }
 ```
+
 then create it's source file inside "src" folder, create one source file called `school.cpp`
+
 >**school.cpp**
+
 ```c++
 #include <iostream>
 #include "../include/school.h"
