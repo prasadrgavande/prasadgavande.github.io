@@ -198,7 +198,7 @@ kramdown:
     block:
       line_numbers: false
       start_line: 1
-
+future: true #added by Prasad to allow posts with future dates
 # Includes & excludes
 include: ["_pages"]
 exclude:
