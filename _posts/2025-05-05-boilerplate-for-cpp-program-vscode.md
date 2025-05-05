@@ -101,14 +101,16 @@ This file contains path of header files, source files, third party libraries (if
 }
 
 ```
-> IMPORTANT
+> IMPORTANT:
+>
 > if you create `tasks.json` using vs code function, then it will have default type as `cppbuild`, in this case you need to add path of all source files one by one.
 >
 > To make it more generic, we have added path of source file as `"${workspaceFolder}/src/*.cpp"`  this does not work with `cppbuild` so changed the type to `shell`
 >
 > Now, whenever we add new source file to project, we dont need to modify `tasks.json` file.
 
-> NOTE
+> NOTE:
+>
 >In args, we have passed `-g`, `main.cpp` to debug file. if you don't want to pass `main.cpp` , then we can also mention `"$(file)"` to debug current file.
 
 
@@ -149,7 +151,8 @@ Once we add this file, we can see debug option in dropdown in vs code with name 
 }
 
 ```
->NOTE
+>NOTE:
+>
 >We have added `"preLaunchTask": "Build Main"`, this name should be exactly same as which we have defined in `tasks.json`
 >
 >`launch.json` will make sure that configuration which we have defined in `tasks.json` has been loaded completely.
@@ -167,7 +170,8 @@ This file defines workspace specific settings including formatting, linting and 
    "editor.formatOnSave": true
 }
 ```
->TIP
+>NOTE:
+>
 > This file also can be used to customize editor behaviours i.e. tabs, spaces, auto-save etc.
 
 That's all, now let's write some simple code.
