@@ -8,11 +8,11 @@ categories: cpp
 featured: false
 ---
 
-I found it little difficult to run CPP project in vs code always, we need to do lot of configuration, setting to debug the code. 
-In this post, you can find boilerplate to run cpp code in vs code. 
+I found it little difficult to run CPP project in vs code always, we need to do lot of configuration, setting to debug the code.
+In this post, you can find boilerplate to run cpp code in vs code.
 
 **Prerequisite**
-- Make sure that CPP compiler already installed in your machine, I will use gcc but you can use any other compiler of your choice 
+- Make sure that CPP compiler already installed in your machine, I will use gcc but you can use any other compiler of your choice
 - VS Code should be installed in your machine.
 - (optional) Install plugin "C/C++ Extension Pack" , this will install C/C++ extension and CMAKE (We don't need CMAKE for now, I will write seperate tutorial to build project using CMAKE)
 
@@ -23,7 +23,7 @@ I am going to follow below folder structure for my project and will follow same 
 Boilerplate
 │   main.cpp             # CPP file contains main function
 │
-└───build                # Build file (Executable / Binary ) 
+└───build                # Build file (Executable / Binary )
 │   │   main.exe
 └───include              # All header files in project
 |    │   student.h
@@ -45,7 +45,7 @@ Boilerplate
 
 #### c_cpp_properties.json - IntelliSense and Compiler Configuration
 This is configuration file in vs code for intellisense, code suggestions and syntax highlighting for c/ c++ code.
-It defines include paths, compiler settings, and standard versions. 
+It defines include paths, compiler settings, and standard versions.
 
 ```json
 {
@@ -58,7 +58,7 @@ It defines include paths, compiler settings, and standard versions.
                 "${workspaceFolder}/libs/**"                                   // Add third party library directory
             ],
             "defines": [],
-            "compilerPath": "D:\\Installation\\mingw\\mingw64\\bin\\g++.exe",  // Add path of your compiler 
+            "compilerPath": "D:\\Installation\\mingw\\mingw64\\bin\\g++.exe",  // Add path of your compiler
             "cppStandard": "c++20",
             "intelliSenseMode": "windows-gcc-x64"
         }
@@ -69,24 +69,24 @@ It defines include paths, compiler settings, and standard versions.
 
 #### tasks.json - Build Automation
 This file defines how VS Code build and compiler your code and helps to automate compilation project.
-We can use Ctrl + Shift + B to build cpp code. 
+We can use Ctrl + Shift + B to build cpp code.
 This file contains path of header files, source files, third party libraries (if any) & output file.
 
 ```json
 {
     "version": "2.0.0",
     "tasks": [
-        {            
+        {
             "type": "shell",
             "label": "Build Main",
             "command": "D:\\Installation\\mingw\\mingw64\\bin\\g++.exe",          //add path of your compiler
             "args": [
                 "-fdiagnostics-color=always",
-                "-g",                
+                "-g",
                 "main.cpp",                                                       //by default run main file
                 "${workspaceFolder}/src/*.cpp",                                   //additional files
                  "-I${workspaceFolder}/include",                                  // Include directory flag
-                 "-I${workspaceFolder}/libs/spdlog/include",                      // Include third party library 
+                 "-I${workspaceFolder}/libs/spdlog/include",                      // Include third party library
                 "-o",
                 "${workspaceFolder}/build/main.exe"
             ],
@@ -103,20 +103,20 @@ This file contains path of header files, source files, third party libraries (if
 ```
 > [!IMPORTANT]
 > if you create `tasks.json` using vs code function, then it will have default type as `cppbuild`, in this case you need to add path of all source files one by one.
-> 
+>
 > To make it more generic, we have added path of source file as `"${workspaceFolder}/src/*.cpp"`  this does not work with `cppbuild` so changed the type to `shell`
 >
 > Now, whenever we add new source file to project, we dont need to modify `tasks.json` file.
 
 >[!NOTE]
->In args, we have passed `-g`, `main.cpp` to debug file. if you don't want to pass `main.cpp` , then we can also mention `"$(file)"` to debug current file. 
+>In args, we have passed `-g`, `main.cpp` to debug file. if you don't want to pass `main.cpp` , then we can also mention `"$(file)"` to debug current file.
 
 
-#### launch.json - Debugger Setup 
-This file conatins configuration for debugging environment, this defines executable, debugger and how to launch a program. 
-Without this file, vs code will not know how to debug program. 
+#### launch.json - Debugger Setup
+This file conatins configuration for debugging environment, this defines executable, debugger and how to launch a program.
+Without this file, vs code will not know how to debug program.
 
-Once we add this file, we can see debug option in dropdown in vs code with name `C++ Debug` (you can give any name) in below configuation 
+Once we add this file, we can see debug option in dropdown in vs code with name `C++ Debug` (you can give any name) in below configuation
 
 ![debug cpp](https://raw.githubusercontent.com/prasadrgavande/prasadgavande.github.io/refs/heads/master/assets/img/debug_cpp.png)
 
@@ -155,7 +155,7 @@ Once we add this file, we can see debug option in dropdown in vs code with name 
 >`launch.json` will make sure that configuration which we have defined in `tasks.json` has been loaded completely.
 
 #### settings.json - Workspace and Editor settings
-This file defines workspace specific settings including formatting, linting and compiler warnings 
+This file defines workspace specific settings including formatting, linting and compiler warnings
 
 
 ```json
@@ -174,7 +174,7 @@ That's all, now let's write some simple code.
 
 >**main.cpp**
 
-```c++ 
+```c++
 #include <iostream>
 #include <stdio.h>
 #include "school.h"
@@ -182,7 +182,7 @@ That's all, now let's write some simple code.
 using namespace std;
 
 int main(int argc, char const *argv[])
-{  
+{
   school::student s;
   s.display(); // Call the display function from the student class
   return 0;
@@ -223,10 +223,9 @@ Our folder structure will be something as below.
 
 ![folder structure](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/cpp_boilerplate.png?raw=true)
 
-Now, press F5 or go to Debug -> select "Debug C++" from dropdown and click on debug icon. 
-Project will compile and generate executable in `build` folder. 
+Now, press F5 or go to Debug -> select "Debug C++" from dropdown and click on debug icon.
+Project will compile and generate executable in `build` folder.
 ![cpp output](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/cpp-boilerplate-output.png?raw=true)
 
 
 Happy Coding !
-
