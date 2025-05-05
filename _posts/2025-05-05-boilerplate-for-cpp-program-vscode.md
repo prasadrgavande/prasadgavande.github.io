@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Boilerplate project to debug and run CPP code in VS Code
+title: Boilerplate project to debug and run C++ code in VS Code
 date: 2025-05-05 15:09:00
-description: Boilerplate project to debug and run CPP code in VS Code
+description: Boilerplate project to debug and run C++ code in VS Code
 tags: code, debug, cpp
 categories: cpp
 featured: false
@@ -234,6 +234,9 @@ Our folder structure will be something as below.
 Now, press F5 or go to Debug -> select "Debug C++" from dropdown and click on debug icon.
 Project will compile and generate executable in `build` folder.
 ![cpp output](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/cpp-boilerplate-output.png?raw=true)
+
+Great! we can now debug and run program in vs code. 
+What next ? if you want to create another program , just copy this project folder and replace your files to run & debug your program. 
 
 
 Happy Coding !
