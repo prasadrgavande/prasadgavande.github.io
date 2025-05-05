@@ -5,7 +5,7 @@ date: 2025-05-05 15:09:00
 description: Boilerplate project to debug and run CPP code in VS Code
 tags: code, debug, cpp
 categories: cpp
-featured: false
+featured: true
 ---
 
 I found it little difficult to run CPP project in vs code always, we need to do lot of configuration, setting to debug the code.
