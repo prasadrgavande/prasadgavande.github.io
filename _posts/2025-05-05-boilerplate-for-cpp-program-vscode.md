@@ -5,7 +5,7 @@ date: 2025-05-05 15:09:00
 description: Boilerplate project to debug and run CPP code in VS Code
 tags: code, debug, cpp
 categories: cpp
-featured: true
+featured: false
 ---
 
 I found it little difficult to run CPP project in vs code always, we need to do lot of configuration, setting to debug the code.
@@ -35,10 +35,10 @@ Boilerplate
 |   │   spdlog
 |    └───include
 │       │   spdlog
-│   c_cpp_properties.json #
-│   launch.json           #
-│   tasks.json            #
-│   settings.json         #
+│   c_cpp_properties.json 
+│   launch.json           
+│   tasks.json            
+│   settings.json         
 ```
 
 ### Let's see use of each JSON file mentioned above
@@ -55,10 +55,10 @@ It defines include paths, compiler settings, and standard versions.
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include",         // Add your header directory
-                "${workspaceFolder}/libs/**"              // Add third party library directory
+                "${workspaceFolder}/libs/**"  // Add third party library directory
             ],
             "defines": [],
-            "compilerPath": "D:\\Installation\\mingw\\mingw64\\bin\\g++.exe",  // Add path of your compiler
+            "compilerPath": "D:\\Installation\\mingw\\mingw64\\bin\\g++.exe",   // Add path of your compiler
             "cppStandard": "c++20",
             "intelliSenseMode": "windows-gcc-x64"
         }
@@ -79,14 +79,14 @@ This file contains path of header files, source files, third party libraries (if
         {
             "type": "shell",
             "label": "Build Main",
-            "command": "D:\\Installation\\mingw\\mingw64\\bin\\g++.exe",    //add path of your compiler
+            "command": "D:\\Installation\\mingw\\mingw64\\bin\\g++.exe",  //add path of your compiler
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "main.cpp",   //by default run main file
-                "${workspaceFolder}/src/*.cpp",            //additional files
-                 "-I${workspaceFolder}/include",         // Include directory flag
-                 "-I${workspaceFolder}/libs/spdlog/include", // Include third party library
+                "${workspaceFolder}/src/*.cpp",   //additional files
+                 "-I${workspaceFolder}/include",   // Include directory flag
+                 "-I${workspaceFolder}/libs/spdlog/include",   // Include third party library
                 "-o",
                 "${workspaceFolder}/build/main.exe"
             ],
@@ -101,14 +101,14 @@ This file contains path of header files, source files, third party libraries (if
 }
 
 ```
-> [!IMPORTANT]
+> IMPORTANT
 > if you create `tasks.json` using vs code function, then it will have default type as `cppbuild`, in this case you need to add path of all source files one by one.
 >
 > To make it more generic, we have added path of source file as `"${workspaceFolder}/src/*.cpp"`  this does not work with `cppbuild` so changed the type to `shell`
 >
 > Now, whenever we add new source file to project, we dont need to modify `tasks.json` file.
 
->[!NOTE]
+> NOTE
 >In args, we have passed `-g`, `main.cpp` to debug file. if you don't want to pass `main.cpp` , then we can also mention `"$(file)"` to debug current file.
 
 
@@ -149,7 +149,7 @@ Once we add this file, we can see debug option in dropdown in vs code with name 
 }
 
 ```
->[!NOTE]
+>NOTE
 >We have added `"preLaunchTask": "Build Main"`, this name should be exactly same as which we have defined in `tasks.json`
 >
 >`launch.json` will make sure that configuration which we have defined in `tasks.json` has been loaded completely.
@@ -167,7 +167,7 @@ This file defines workspace specific settings including formatting, linting and 
    "editor.formatOnSave": true
 }
 ```
->[!TIP]
+>TIP
 > This file also can be used to customize editor behaviours i.e. tabs, spaces, auto-save etc.
 
 That's all, now let's write some simple code.
