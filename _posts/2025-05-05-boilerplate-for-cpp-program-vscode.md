@@ -35,13 +35,14 @@ Boilerplate
 |   │   spdlog
 |    └───include
 │       │   spdlog
-│   c_cpp_properties.json 
-│   launch.json           
-│   tasks.json            
-│   settings.json         
+└───.vscode              # vscode default folder to save settings
+|    │   c_cpp_properties.json 
+|    │   launch.json           
+|    │   tasks.json            
+|    │   settings.json         
 ```
 
-### Let's see use of each JSON file mentioned above
+### Let's see use of each JSON file stored in .vscode folder mentioned above
 
 #### c_cpp_properties.json - IntelliSense and Compiler Configuration
 This is configuration file in vs code for intellisense, code suggestions and syntax highlighting for c/ c++ code.
