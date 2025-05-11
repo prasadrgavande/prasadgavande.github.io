@@ -12,14 +12,7 @@
       "district": "Wan Chai",
       "countryCode": "Hong Kong",
       "region": "Hong Kong"
-    },
-    "profiles": [
-      {
-        "network": "Twitter",
-        "username": "PrasadRGavande",
-        "url": "https://x.com/PrasadRGavande"
-      }
-    ]
+    }
   },
    "skills": [
     {
@@ -31,7 +24,7 @@
         "C#",
         "Shell scripting",
         "PowerShell",
-        "Excel VBA",        
+        "Excel VBA"
       ]
     },
      {
@@ -62,7 +55,7 @@
         "JIRA & Confluence"        
       ]
     }
-  ],
+  ]  ,
   "work": [
     {
       "name": "Institute for Advanced Study, Princeton University",
@@ -94,7 +87,7 @@
       "name": "Developing Microsoft SharePoint Server 2013 Advance Solution [70-489]",       
       "issuer": "Microsoft",      
       "icon": "fa-solid fa-location-dot"
-    },
+    }
   ],
   "education": [
     {
