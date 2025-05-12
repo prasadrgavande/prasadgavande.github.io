@@ -18,7 +18,7 @@
     {
       "name": "Programming Languages",
       "level": "Master",
-      "icon": "fa-solid fa-hashtag",
+      "icon": "fa-solid fa-code",
       "keywords": [
         "C++",
         "C#",
@@ -30,7 +30,7 @@
      {
       "name": "Database",
       "level": "Master",
-      "icon": "fa-solid fa-hashtag",
+      "icon": "fa-solid fa-database",
       "keywords": [
         "Oracle",
         "MSSQL",
@@ -40,7 +40,7 @@
      {
       "name": "DevOps",
       "level": "Master",
-      "icon": "fa-solid fa-hashtag",
+      "icon": "fa-solid fa-file-code-o",
       "keywords": [
         "Jenkins",
         "Docker"        
