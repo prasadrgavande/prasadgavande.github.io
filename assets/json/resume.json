@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Prasad Gavande",
-    "label": "Post Trade Developer",
+    "position": "Post Trade Developer",
     "image": "",
     "email": "prasad.gavande@live.com",
     "phone": "+852 54931218",
@@ -62,29 +62,43 @@
       "position": "Senior Software Engineer",      
       "startDate": "2013-07-01",
       "endDate": "Present",      
-      "highlights": ["Relativity"]
+      "highlights": [
+          "Responsible for migration of settlement system to other platform"
+        , "Responsible for enhancement, maintenance, support of back office systems"
+        , "Responsible for implementing different reports for users for their daily operations example OTCR, HKTR"
+        , "Implemented BCAN-CID model to our existing system using C# and C++"
+        , "Developed system to manage static data of settlement system in C# (windows desktop application)" 
+        , "Design and develop outlook add-in to post news from outlook email to Confluence using REST API and C#"
+        , "Responsible for developing and maintenance of ServiceNow system, develop Purchase Request and Hot-desk approval system in ServiceNow portal"
+        , "Develop utility tools to generate reports from ServiceNow using C#." 
+        , "Design and developed bridging program for Concur SAP and SUN account system using C#"
+        , "Responsible for maintenance and enhancement of DCM Corporate website of APAC region"
+        , "Responsible for development, enhancement, and maintenance of intranet SharePoint systems such as Change management system, Travel Management system, Incident reporting system, Helpdesk systems etc." 
+        , "Responsible for support and maintenance of Atlassian Products (JIRA, Confluence and Fisheye)"
+        , "Support and maintenance of Enterprise project management system (EPM)"
+      ]
     }
   ],
   "certificates": [
     {
       "name": "Programming in HTML5 with JavaScript and CSS  [70-480]",       
       "issuer": "Microsoft",      
-      "icon": "fa-solid fa-location-dot"
+      "icon": "fa-solid fa-certificate"
     },
     {
       "name": "Developing Microsoft SharePoint Server Core Solutions [70- 488]",       
       "issuer": "Microsoft",      
-      "icon": "fa-solid fa-location-dot"
+      "icon": "fa-solid fa-certificate"
     },
     {
       "name": "Developing Microsoft SharePoint Server 2013 Advance Solution [70-489]",       
       "issuer": "Microsoft",      
-      "icon": "fa-solid fa-location-dot"
+      "icon": "fa-solid fa-certificate"
     },
     {
       "name": "Developing Microsoft SharePoint Server 2013 Advance Solution [70-489]",       
       "issuer": "Microsoft",      
-      "icon": "fa-solid fa-location-dot"
+      "icon": "fa-solid fa-certificate"
     }
   ],
   "education": [
