@@ -3,8 +3,8 @@ layout: post
 title: Trying to understand Shell Scripting
 date: 2025-06-09 15:09:00
 description: Tutorial for basics of Shell scripting
-tags: code, shellScripting
-categories: shellScripts
+tags: code, shell
+categories: scripting
 featured: false
 ---
 
