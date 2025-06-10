@@ -209,3 +209,71 @@ done
 like before, you need to grant permission and then execute this shell script. Result will be as below
 
 ![for loop](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/2.%20trying%20to%20understand%20shell%20scripts/for.png?raw=true)
+
+## Comments
+We can add comments in shell script using `#` symbol.
+Anthing after # symbol is consider as comments and this command will not get executed 
+exmaple 
+```shell
+#!/bin/bash
+for color in red green blue # define the colors here 
+do
+        echo "Selected color in this iteration is: ${color}"
+done
+```
+in above script at second line we have added comment as `# define the colors here ` this is just comment, and this will not be executed 
+
+## Return codes
+Return code can be used in script for error checking, if return code is 0 meaning command executed successfully, if it is non-zero value, that means there is some error
+We can use special variable `$?` to check return code if previously executed command. 
+
+let's take an example, if I try `ls` command for any such path which does not exist , then our script will return non-zero code.
+
+```shell
+#!/bin/bash
+ls /prasad/test
+echo "$?"
+```
+
+`/prasad/test` this directory does not exists in my machine, so when I run script, I will get output as below
+
+![ReturnCode](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/2.%20trying%20to%20understand%20shell%20scripts/returnCode1.png?raw=true)
+
+As we can see it has return code as 2, as it is not zero, we can say there is some error in command execution. 
+
+Let's take another example, in this example we are going to create some file and try to see what it will return
+```shell
+#!/bin/bash
+touch prasad.txt
+echo "text file has been created"
+echo "$?"
+```
+
+Run this script 
+![ReturnCode2](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/2.%20trying%20to%20understand%20shell%20scripts/returnCode2.png?raw=true)
+
+as we can see it has returned code as `0` and  created new file with name `prasad.txt`
+
+## Exit Command
+We can defined our own exit codes in shell script, simply use `exit` command in script and follow it with number from 0 to 255.
+We can add exit command anywhere in script. Whenever, script reached to exit command it will stop running.
+
+```shell
+#!/bin/bash
+cat prasad.txt
+if [ "$?" -eq "0" ]
+then
+        echo "Command success"
+        exit 0
+else
+        echo "Command failed"
+        exit 1
+fi
+```
+
+In above example, we are using `cat` command to read content from file, if it is success then we are checking with return code. 
+If code returned as 0 that means we have successfully executed previous command and then we are using exit command by setting exit status as 0 , similarly if it is failed to read file then we are exiting with code as 1. 
+
+as file with name `prasad.txt` already present in directory, it will return output as 
+
+`Command success`
