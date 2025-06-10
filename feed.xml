@@ -1,10 +1,87 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://prasadgavande.in/feed.xml" rel="self" type="application/atom+xml"/><link href="https://prasadgavande.in/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-06-10T16:38:10+00:00</updated><id>https://prasadgavande.in/feed.xml</id><title type="html">blank</title><subtitle>Personal website | Technical blog</subtitle><entry><title type="html">Trying to understand Shell Scripting</title><link href="https://prasadgavande.in/blog/2025/traying-to-understand-shell-scripting/" rel="alternate" type="text/html" title="Trying to understand Shell Scripting"/><published>2025-06-09T15:09:00+00:00</published><updated>2025-06-09T15:09:00+00:00</updated><id>https://prasadgavande.in/blog/2025/traying-to-understand-shell-scripting</id><content type="html" xml:base="https://prasadgavande.in/blog/2025/traying-to-understand-shell-scripting/"><![CDATA[<p>In this post, we are trying to understand about shell scripting. As per wikipedia, A shell script is a computer program designed to be run by a Unix shell, a command-line interpreter. A script is command line program that contains a series of commands. The commands contained in the script are executed by interpreter. In case of shell scripts, the shell acts as interpreter and executes the commands listed in the script one after another.</p> <p>Let’s create our first shell script</p> <p>Create a new file in your Unix / Linux operating system. I have ubuntu with me, so I will create new file using touch command</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">touch </span>firstScript.sh
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://prasadgavande.in/feed.xml" rel="self" type="application/atom+xml"/><link href="https://prasadgavande.in/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-06-10T16:40:16+00:00</updated><id>https://prasadgavande.in/feed.xml</id><title type="html">blank</title><subtitle>Personal website | Technical blog</subtitle><entry><title type="html">Trying to understand Shell Scripting</title><link href="https://prasadgavande.in/blog/2025/traying-to-understand-shell-scripting/" rel="alternate" type="text/html" title="Trying to understand Shell Scripting"/><published>2025-06-09T15:09:00+00:00</published><updated>2025-06-09T15:09:00+00:00</updated><id>https://prasadgavande.in/blog/2025/traying-to-understand-shell-scripting</id><content type="html" xml:base="https://prasadgavande.in/blog/2025/traying-to-understand-shell-scripting/"><![CDATA[<p>In this post, we are trying to understand about shell scripting. As per wikipedia, A shell script is a computer program designed to be run by a Unix shell, a command-line interpreter. A script is command line program that contains a series of commands. The commands contained in the script are executed by interpreter. In case of shell scripts, the shell acts as interpreter and executes the commands listed in the script one after another.</p> <p>Let’s create our first shell script</p> <p>Create a new file in your Unix / Linux operating system. I have ubuntu with me, so I will create new file using touch command</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">touch </span>firstScript.sh
 </code></pre></div></div> <p>Then open file with your favorite editor, I am using VIM editor.</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim firstScript.sh
 </code></pre></div></div> <p>it will open file in edit mode, press “I” to go to insert mode</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
 <span class="nb">echo</span> <span class="s2">"This is my first shell script"</span>
 </code></pre></div></div> <p>Save the file, and go back to folder where you have saved this file before you try to execute the script, make sure that it is executable and have enough permission to run Enter following command</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>755 firstScript.sh 
 </code></pre></div></div> <p>Now, this is time to run our first shell script Enter file name directly</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.<span class="se">\f</span>irstScript.sh
-</code></pre></div></div> <p>We have successfully run our first shell script</p> <p><img src="https://raw.githubusercontent.com/prasadrgavande/prasadgavande.github.io/refs/heads/master/assets/img/2.%20trying%20to%20understand%20shell%20scripts/run-first-script.png" alt="First Run"/></p>]]></content><author><name></name></author><category term="shellScripts"/><category term="code,"/><category term="shellScripting"/><summary type="html"><![CDATA[Tutorial for basics of Shell scripting]]></summary></entry><entry><title type="html">Boilerplate project to debug and run C++ code in VS Code</title><link href="https://prasadgavande.in/blog/2025/boilerplate-for-cpp-program-vscode/" rel="alternate" type="text/html" title="Boilerplate project to debug and run C++ code in VS Code"/><published>2025-05-05T15:09:00+00:00</published><updated>2025-05-05T15:09:00+00:00</updated><id>https://prasadgavande.in/blog/2025/boilerplate-for-cpp-program-vscode</id><content type="html" xml:base="https://prasadgavande.in/blog/2025/boilerplate-for-cpp-program-vscode/"><![CDATA[<p>I found it little difficult to run CPP project in vs code always, we need to do lot of configuration, setting to debug the code. In this post, you can find boilerplate to run cpp code in vs code.</p> <p><strong>Prerequisite</strong></p> <ul> <li>Make sure that CPP compiler already installed in your machine, I will use gcc but you can use any other compiler of your choice</li> <li>VS Code should be installed in your machine.</li> <li>(optional) Install plugin “C/C++ Extension Pack” , this will install C/C++ extension and CMAKE (We don’t need CMAKE for now, I will write seperate tutorial to build project using CMAKE)</li> </ul> <h4 id="create-new-folder-for-your-cpp-project">Create new folder for your CPP Project</h4> <p>I am going to follow below folder structure for my project and will follow same in rest of tutorial to write configuration files</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Boilerplate
+</code></pre></div></div> <p>We have successfully run our first shell script</p> <p><img src="https://raw.githubusercontent.com/prasadrgavande/prasadgavande.github.io/refs/heads/master/assets/img/2.%20trying%20to%20understand%20shell%20scripts/run-first-script.png" alt="First Run"/></p> <p>Let’s further discuss more about shell scripting</p> <h2 id="variables">Variables</h2> <p>You can use variables in shell script. Variables simply storage locations which have name. We can assign value to those variable for later use. Example, any operations, manipulation etc. Syntaxt to create variable is very simple</p> <p><code class="language-plaintext highlighter-rouge">Variable_name="some value"</code></p> <p>Once variable created, you can retrieve value inside variable using <code class="language-plaintext highlighter-rouge">${variable_name}</code></p> <p>let’s create shell script with variable and try to retrieve that value</p> <p>Create another shell script and write code as below</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nv">MY_VAR</span><span class="o">=</span><span class="s2">"Bash"</span>
+<span class="nb">echo</span> <span class="s2">"This is </span><span class="k">${</span><span class="nv">MY_VAR</span><span class="k">}</span><span class="s2"> command, running in shell scirpt"</span>
+</code></pre></div></div> <p>Grant permission as we have given in previous example</p> <p>then run this shell script</p> <p><img src="https://raw.githubusercontent.com/prasadrgavande/prasadgavande.github.io/refs/heads/master/assets/img/2.%20trying%20to%20understand%20shell%20scripts/variable.png" alt="variable"/></p> <h2 id="conditional-statements">Conditional Statements</h2> <h3 id="if-statement">if statement</h3> <p>We can use if statement same as other programming languages in shell script. In shell scripts, we have to use if-then-fi, fi is to tell interpreter that, if condition block has been ended.</p> <p>below is syntax</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">[</span> condition <span class="o">]</span>
+<span class="k">then
+  </span><span class="nb">command </span>1
+  <span class="nb">command </span>2
+  ...
+<span class="k">fi</span>
+</code></pre></div></div> <p>lets take an example</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nv">firstNumber</span><span class="o">=</span>10
+<span class="nv">secondNumber</span><span class="o">=</span>10
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$firstNumber</span> <span class="o">=</span> <span class="nv">$secondNumber</span> <span class="o">]</span>
+<span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"both numbers are equal"</span>
+<span class="k">fi</span>
+</code></pre></div></div> <p>save the file , grant permission and try to run this shell script you will see output as below</p> <p><code class="language-plaintext highlighter-rouge">both numbers are equal</code></p> <blockquote> <p>NOTE: Remember to add one space in between <code class="language-plaintext highlighter-rouge">if</code> and <code class="language-plaintext highlighter-rouge">[</code> otherwise you will get an error</p> </blockquote> <h3 id="if-else-statement">if-else statement</h3> <p>We can also add else statement along with if , below is its syntax</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">[</span> condition <span class="o">]</span>
+<span class="k">then
+  </span><span class="nb">command </span>1
+  <span class="nb">command </span>2
+  ...
+<span class="k">else
+  </span><span class="nb">command </span>3
+  <span class="nb">command </span>4
+  ...
+<span class="k">fi</span>
+</code></pre></div></div> <p>let’s continue to expand our previous example but here we will change value of variable <code class="language-plaintext highlighter-rouge">firstNumber</code> and <code class="language-plaintext highlighter-rouge">secondNumber</code></p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nv">firstNumber</span><span class="o">=</span>50
+<span class="nv">secondNumber</span><span class="o">=</span>100
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$firstNumber</span> <span class="o">=</span> <span class="nv">$secondNumber</span> <span class="o">]</span>
+<span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"both numbers are equal"</span>
+<span class="k">else
+        </span><span class="nb">echo</span> <span class="s2">"both numbers are not equal"</span>
+<span class="k">fi</span>
+</code></pre></div></div> <p>Run this shell script and you will see results as below</p> <p><code class="language-plaintext highlighter-rouge">both numbers are not equal</code></p> <h3 id="if--else-if---else-statements">if- else if - else statements</h3> <p>Shell script also allow us for else-if with below syntax</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">[</span> condition 1 <span class="o">]</span>
+<span class="k">then
+  </span><span class="nb">command </span>1
+  <span class="nb">command </span>2
+  ...
+<span class="k">elif</span> <span class="o">[</span> condition 2 <span class="o">]</span>
+<span class="k">then
+  </span><span class="nb">command </span>3
+  <span class="nb">command </span>4
+  ...
+<span class="k">else
+  </span><span class="nb">command </span>5
+  <span class="nb">command </span>6
+  ...
+<span class="k">fi</span>
+</code></pre></div></div> <p>lets further expand our previous example again</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nv">firstNumber</span><span class="o">=</span>10
+<span class="nv">secondNumber</span><span class="o">=</span>100
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$firstNumber</span> <span class="o">=</span> <span class="nv">$secondNumber</span> <span class="o">]</span>
+<span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"both numbers are equal"</span>
+<span class="k">elif</span> <span class="o">[</span> <span class="nv">$firstNumber</span> <span class="o">=</span> 10 <span class="o">]</span>
+<span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"first number is 10"</span>
+<span class="k">else
+        </span><span class="nb">echo</span> <span class="s2">"both numbers are not equal"</span>
+<span class="k">fi</span>
+</code></pre></div></div> <p>Now, as <code class="language-plaintext highlighter-rouge">firstNumber</code> assigned to 10, it will go to <code class="language-plaintext highlighter-rouge">else-if</code> statement block and result will be</p> <p><code class="language-plaintext highlighter-rouge">first number is 10</code></p> <h2 id="loops">Loops</h2> <h3 id="for-loop">for loop</h3> <p>if you want to perform any action number of times then, we can make use of for loop. Below is syntax for “For” loop</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>variable_name <span class="k">in </span>item1 item2 ... itemN
+<span class="k">do
+  </span><span class="nb">command </span>1
+  <span class="nb">command </span>2
+  ...
+<span class="k">done</span>
+</code></pre></div></div> <p>lets take an example of this</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="k">for </span>color <span class="k">in </span>red green blue
+<span class="k">do
+        </span><span class="nb">echo</span> <span class="s2">"Selected color in this iteration is: </span><span class="k">${</span><span class="nv">color</span><span class="k">}</span><span class="s2">"</span>
+<span class="k">done</span>
+</code></pre></div></div> <p>like before, you need to grant permission and then execute this shell script. Result will be as below</p> <p><img src="https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/2.%20trying%20to%20understand%20shell%20scripts/for.png?raw=true" alt="for loop"/></p>]]></content><author><name></name></author><category term="shellScripts"/><category term="code,"/><category term="shellScripting"/><summary type="html"><![CDATA[Tutorial for basics of Shell scripting]]></summary></entry><entry><title type="html">Boilerplate project to debug and run C++ code in VS Code</title><link href="https://prasadgavande.in/blog/2025/boilerplate-for-cpp-program-vscode/" rel="alternate" type="text/html" title="Boilerplate project to debug and run C++ code in VS Code"/><published>2025-05-05T15:09:00+00:00</published><updated>2025-05-05T15:09:00+00:00</updated><id>https://prasadgavande.in/blog/2025/boilerplate-for-cpp-program-vscode</id><content type="html" xml:base="https://prasadgavande.in/blog/2025/boilerplate-for-cpp-program-vscode/"><![CDATA[<p>I found it little difficult to run CPP project in vs code always, we need to do lot of configuration, setting to debug the code. In this post, you can find boilerplate to run cpp code in vs code.</p> <p><strong>Prerequisite</strong></p> <ul> <li>Make sure that CPP compiler already installed in your machine, I will use gcc but you can use any other compiler of your choice</li> <li>VS Code should be installed in your machine.</li> <li>(optional) Install plugin “C/C++ Extension Pack” , this will install C/C++ extension and CMAKE (We don’t need CMAKE for now, I will write seperate tutorial to build project using CMAKE)</li> </ul> <h4 id="create-new-folder-for-your-cpp-project">Create new folder for your CPP Project</h4> <p>I am going to follow below folder structure for my project and will follow same in rest of tutorial to write configuration files</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Boilerplate
 │   main.cpp             # CPP file contains main function
 │
 └───build                # Build file (Executable / Binary )
