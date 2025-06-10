@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Post Trade Developer
+subtitle: Post Trade Developer and Production Support Specialist
 profile:
   align: left
   image: prof_pic.jpg
