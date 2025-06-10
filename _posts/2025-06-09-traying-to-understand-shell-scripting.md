@@ -277,3 +277,76 @@ If code returned as 0 that means we have successfully executed previous command 
 as file with name `prasad.txt` already present in directory, it will return output as 
 
 `Command success`
+
+## Functions 
+Functions is most importent topic in any programming language, this help to avoid code duplication ana make program well strucured, easy to read, easy to understand. 
+
+Below is syntax to create function in shell script
+
+```shell
+function Function_name() {
+# do something
+}
+```
+We can also write functions without specifying function before it's name as below
+
+```shell
+function_name(){
+#do something
+}
+```
+and simply use function name in your script file to call function 
+let's take an example 
+
+```shell
+function add(){
+        n1=1
+        n2=2
+        addition=$((n1+n2)) # add two numbers
+        echo "Addition of two number is : ${addition} "
+}
+
+add  #<---function calling
+```
+
+this will return output as below
+
+`Addition of two number is : 3` 
+
+>NOTE: To perform arithmetic in Bash, you need to use either $(()) or the expr command. 
+
+## Positional Parameters
+We can pass parameters to our shell script and to our functions and those can be accessible using `$` symbol example $1, $2 etc 
+Let's contunue to our above example of addition. 
+
+```shell
+function add(){
+        n1=$1
+        n2=$2
+        addition=$((n1+n2)) # add two numbers
+        echo "Addition of two number is : ${addition} "
+}
+
+add 10 20 #<---function calling
+```
+This will return output as below
+`Addition of two number is : 30`
+
+We also can pass parameters to our shell script directly. lets modify our script and then pass parameters while running script
+
+```shell
+function add(){
+        n1=$1
+        n2=$2
+        addition=$((n1+n2)) # add two numbers
+        echo "Addition of two number is : ${addition} "
+}
+
+add $1 $2 #<---function calling
+```
+Now, we are going to pass parameters while running script, use below command to run script
+
+![Function parameter](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/2.%20trying%20to%20understand%20shell%20scripts/function-parameter.png?raw=true)
+
+This is how we can pass parameter to script and to the function. 
+
