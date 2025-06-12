@@ -446,8 +446,208 @@ root@Prabhu:~/shell# diff file.txt test2.txt
 root@Prabhu:~/shell#
 ```
 
+## Access & User operations 
+### sudo 
+This command enables non-root user who are part of sudo group to execute administrative operations 
+Syntax is as below
+```
+sudo [options] command
+```
+
+if you want to act as sudo then execute following command
+```
+sudo su
+```
+
+if you want to modify any file which need admin previlages then use command as below
+```
+sudo nano file.txt
+```
+
+We can perform many such operations using sudo but you should be part of sudo group in order to use this command
+
+### whoami 
+Use this command to check current logged in user 
+
+```
+root@Prabhu:~/prasad# whoami
+root
+root@Prabhu:~/prasad#
+```
+
+### chmod 
+this command used to change file/ directory permissions
+Syntax
+```
+chmod [options][permission][file / directory]
+```
+Example if I want to modify permission for sample.txt, below is current permission befor change
+
+```
+root@Prabhu:~/prasad# ls -la
+total 16
+drwxr-xr-x 3 root root 4096 Jun 12 22:45 .
+drwx------ 8 root root 4096 Jun 12 23:11 ..
+-rw-r--r-- 1 root root 3094 Jun 12 22:37 sample.txt
+root@Prabhu:~/prasad#
+```
+
+now read-write permissions to all users for this file
+```
+root@Prabhu:~/prasad# ls -la
+total 16
+drwxr-xr-x 3 root root 4096 Jun 12 22:45 .
+drwx------ 8 root root 4096 Jun 12 23:11 ..
+-rwxrwxrwx 1 root root 3094 Jun 12 22:37 sample.txt
+```
+
+### chown
+this command is used to change ownership of file / directory, below is its syntax
+
+```
+chown [options] newowner:newgroup [filename]
+```
 
 
+## disk related operations 
+
+## df
+this command is used to check disk usage and used spaced in your machine
+example
+
+```
+root@Prabhu:~# df
+Filesystem      1K-blocks      Used  Available Use% Mounted on
+none              5038196         0    5038196   0% /usr/lib/modules/6.6.87.1-microsoft-standard-WSL2
+none              5038196         4    5038192   1% /mnt/wsl
+drivers         123857916 121770020    2087896  99% /usr/lib/wsl/drivers
+/dev/sdd       1055762868   1675256 1000384140   1% /
+none              5038196        80    5038116   1% /mnt/wslg
+none              5038196         0    5038196   0% /usr/lib/wsl/lib
+rootfs            5033176      2664    5030512   1% /init
+none              5038196       520    5037676   1% /run
+none              5038196         0    5038196   0% /run/lock
+none              5038196         0    5038196   0% /run/shm
+none              5038196        76    5038120   1% /mnt/wslg/versions.txt
+none              5038196        76    5038120   1% /mnt/wslg/doc
+C:\             123857916 121770020    2087896  99% /mnt/c
+D:\             976760828 350942804  625818024  36% /mnt/d
+tmpfs             5038196        16    5038180   1% /run/user/0
+root@Prabhu:~#
+```
+
+## du 
+This command is used to check size of directory in KB
+Example
+
+```
+root@Prabhu:~# cd shell/
+root@Prabhu:~/shell# du
+40      .
+root@Prabhu:~/shell#
+```
+
+## Process related operations 
+
+### top
+Command shows all running processes in system and their hardware consumption
+```
+root@Prabhu:~/shell# top
+top - 23:26:44 up  1:29,  2 users,  load average: 0.01, 0.02, 0.00
+Tasks:  30 total,   1 running,  29 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   9840.2 total,   9310.8 free,    493.3 used,    196.3 buff/cache
+MiB Swap:   3072.0 total,   3072.0 free,      0.0 used.   9346.9 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0   21740  12240   9296 S   0.0   0.1   0:00.94 systemd
+      2 root      20   0    3060   1792   1792 S   0.0   0.0   0:00.02 init-systemd(Ub
+      7 root      20   0    3076   1792   1792 S   0.0   0.0   0:00.00 init
+     65 root      19  -1   50420  15752  14984 S   0.0   0.2   0:00.48 systemd-journal
+    118 root      20   0   25004   6272   4992 S   0.0   0.1   0:00.15 systemd-udevd
+    192 systemd+  20   0   21452  12800  10624 S   0.0   0.1   0:00.11 systemd-resolve
+    193 systemd+  20   0   91020   7552   6784 S   0.0   0.1   0:00.18 systemd-timesyn
+    205 root      20   0    4236   2560   2432 S   0.0   0.0   0:00.01 cron
+```
+
+### ps
+this command shows summarized status of running processes in system
+
+```
+root@Prabhu:~/shell# ps
+    PID TTY          TIME CMD
+   1566 pts/2    00:00:00 sudo
+   1567 pts/2    00:00:00 su
+   1568 pts/2    00:00:00 bash
+   1597 pts/2    00:00:00 ps
+root@Prabhu:~/shell#
+```
+### kill
+This command is used to kill any process, we need to pass process id to kill that perticular process
+
+```
+kill PID
+```
+
+## Other utility commands
+
+## uname
+this command shows information about system
+
+```
+root@Prabhu:~/shell# uname
+Linux
+```
+To display all setting, use -a
+```
+root@Prabhu:~/shell# uname -a
+Linux Prabhu 6.6.87.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Mon Apr 21 17:08:54 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+root@Prabhu:~/shell#
+```
+
+### hostname
+Use this command to get hostname of your system
+```
+root@Prabhu:~/shell# hostname
+Prabhu
+```
+
+### time
+Use this command to check system date time settings
+```
+root@Prabhu:~/shell# time
+real    0m0.000s
+user    0m0.000s
+sys     0m0.000s
+root@Prabhu:~/shell#
+```
+### ip
+this command is used to get list and manage network related parameters
+
+```
+ip [options] command
+```
+
+Example, To display ip address of current system
+
+```
+root@Prabhu:~/shell# ip address show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:48:7f:77 brd ff:ff:ff:ff:ff:ff
+    inet 172.28.43.90/20 brd 172.28.47.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe48:7f77/64 scope link
+       valid_lft forever preferred_lft forever
+root@Prabhu:~/shell#
+```
 
 
 
