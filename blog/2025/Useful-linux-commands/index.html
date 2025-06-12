@@ -176,4 +176,98 @@ root@Prabhu:~/shell#
 ---
 &gt;  this is prabhu
 root@Prabhu:~/shell#
+</code></pre></div></div> <h2 id="access--user-operations">Access &amp; User operations</h2> <h3 id="sudo">sudo</h3> <p>This command enables non-root user who are part of sudo group to execute administrative operations Syntax is as below</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo [options] command
+</code></pre></div></div> <p>if you want to act as sudo then execute following command</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo su
+</code></pre></div></div> <p>if you want to modify any file which need admin previlages then use command as below</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo nano file.txt
+</code></pre></div></div> <p>We can perform many such operations using sudo but you should be part of sudo group in order to use this command</p> <h3 id="whoami">whoami</h3> <p>Use this command to check current logged in user</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/prasad# whoami
+root
+root@Prabhu:~/prasad#
+</code></pre></div></div> <h3 id="chmod">chmod</h3> <p>this command used to change file/ directory permissions Syntax</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod [options][permission][file / directory]
+</code></pre></div></div> <p>Example if I want to modify permission for sample.txt, below is current permission befor change</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/prasad# ls -la
+total 16
+drwxr-xr-x 3 root root 4096 Jun 12 22:45 .
+drwx------ 8 root root 4096 Jun 12 23:11 ..
+-rw-r--r-- 1 root root 3094 Jun 12 22:37 sample.txt
+root@Prabhu:~/prasad#
+</code></pre></div></div> <p>now read-write permissions to all users for this file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/prasad# ls -la
+total 16
+drwxr-xr-x 3 root root 4096 Jun 12 22:45 .
+drwx------ 8 root root 4096 Jun 12 23:11 ..
+-rwxrwxrwx 1 root root 3094 Jun 12 22:37 sample.txt
+</code></pre></div></div> <h3 id="chown">chown</h3> <p>this command is used to change ownership of file / directory, below is its syntax</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chown [options] newowner:newgroup [filename]
+</code></pre></div></div> <h2 id="disk-related-operations">disk related operations</h2> <h2 id="df">df</h2> <p>this command is used to check disk usage and used spaced in your machine example</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~# df
+Filesystem      1K-blocks      Used  Available Use% Mounted on
+none              5038196         0    5038196   0% /usr/lib/modules/6.6.87.1-microsoft-standard-WSL2
+none              5038196         4    5038192   1% /mnt/wsl
+drivers         123857916 121770020    2087896  99% /usr/lib/wsl/drivers
+/dev/sdd       1055762868   1675256 1000384140   1% /
+none              5038196        80    5038116   1% /mnt/wslg
+none              5038196         0    5038196   0% /usr/lib/wsl/lib
+rootfs            5033176      2664    5030512   1% /init
+none              5038196       520    5037676   1% /run
+none              5038196         0    5038196   0% /run/lock
+none              5038196         0    5038196   0% /run/shm
+none              5038196        76    5038120   1% /mnt/wslg/versions.txt
+none              5038196        76    5038120   1% /mnt/wslg/doc
+C:\             123857916 121770020    2087896  99% /mnt/c
+D:\             976760828 350942804  625818024  36% /mnt/d
+tmpfs             5038196        16    5038180   1% /run/user/0
+root@Prabhu:~#
+</code></pre></div></div> <h2 id="du">du</h2> <p>This command is used to check size of directory in KB Example</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~# cd shell/
+root@Prabhu:~/shell# du
+40      .
+root@Prabhu:~/shell#
+</code></pre></div></div> <h2 id="process-related-operations">Process related operations</h2> <h3 id="top">top</h3> <p>Command shows all running processes in system and their hardware consumption</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# top
+top - 23:26:44 up  1:29,  2 users,  load average: 0.01, 0.02, 0.00
+Tasks:  30 total,   1 running,  29 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   9840.2 total,   9310.8 free,    493.3 used,    196.3 buff/cache
+MiB Swap:   3072.0 total,   3072.0 free,      0.0 used.   9346.9 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0   21740  12240   9296 S   0.0   0.1   0:00.94 systemd
+      2 root      20   0    3060   1792   1792 S   0.0   0.0   0:00.02 init-systemd(Ub
+      7 root      20   0    3076   1792   1792 S   0.0   0.0   0:00.00 init
+     65 root      19  -1   50420  15752  14984 S   0.0   0.2   0:00.48 systemd-journal
+    118 root      20   0   25004   6272   4992 S   0.0   0.1   0:00.15 systemd-udevd
+    192 systemd+  20   0   21452  12800  10624 S   0.0   0.1   0:00.11 systemd-resolve
+    193 systemd+  20   0   91020   7552   6784 S   0.0   0.1   0:00.18 systemd-timesyn
+    205 root      20   0    4236   2560   2432 S   0.0   0.0   0:00.01 cron
+</code></pre></div></div> <h3 id="ps">ps</h3> <p>this command shows summarized status of running processes in system</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# ps
+    PID TTY          TIME CMD
+   1566 pts/2    00:00:00 sudo
+   1567 pts/2    00:00:00 su
+   1568 pts/2    00:00:00 bash
+   1597 pts/2    00:00:00 ps
+root@Prabhu:~/shell#
+</code></pre></div></div> <h3 id="kill">kill</h3> <p>This command is used to kill any process, we need to pass process id to kill that perticular process</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kill PID
+</code></pre></div></div> <h2 id="other-utility-commands">Other utility commands</h2> <h2 id="uname">uname</h2> <p>this command shows information about system</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# uname
+Linux
+</code></pre></div></div> <p>To display all setting, use -a</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# uname -a
+Linux Prabhu 6.6.87.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Mon Apr 21 17:08:54 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+root@Prabhu:~/shell#
+</code></pre></div></div> <h3 id="hostname">hostname</h3> <p>Use this command to get hostname of your system</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# hostname
+Prabhu
+</code></pre></div></div> <h3 id="time">time</h3> <p>Use this command to check system date time settings</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# time
+real    0m0.000s
+user    0m0.000s
+sys     0m0.000s
+root@Prabhu:~/shell#
+</code></pre></div></div> <h3 id="ip">ip</h3> <p>this command is used to get list and manage network related parameters</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip [options] command
+</code></pre></div></div> <p>Example, To display ip address of current system</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# ip address show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:48:7f:77 brd ff:ff:ff:ff:ff:ff
+    inet 172.28.43.90/20 brd 172.28.47.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe48:7f77/64 scope link
+       valid_lft forever preferred_lft forever
+root@Prabhu:~/shell#
 </code></pre></div></div> </div> </article> <br> <hr> <br> <ul class="list-disc pl-8"></ul> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="//blog/2025/traying-to-understand-shell-scripting/">Trying to understand Shell Scripting</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="//blog/2025/boilerplate-for-cpp-program-vscode/">Boilerplate project to debug and run C++ code in VS Code</a> </li> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2025 Prasad Rajesh Gavande . Yet another developer's blog </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?fcfacfb8c6281f5e68d5a7d348186eb1"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script> <script type="text/javascript">function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",function(){progressBar.attr({value:getCurrentScrollPosition()})}),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};</script> </body> </html>
