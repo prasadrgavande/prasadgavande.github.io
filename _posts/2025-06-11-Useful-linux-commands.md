@@ -10,8 +10,8 @@ featured: false
 
 In this post, we are going to take a look on some essential and useful linux / unix commands that are being used for day to day operations
 
-# Commands for directory operations 
-## ls 
+## Commands for directory operations 
+### ls 
 This command is use to list content in folder
 
 ```
@@ -28,7 +28,7 @@ alternatives            cron.weekly     glvnd       ld.so.conf      modules     
 apparmor                cron.yearly     gnutls      ld.so.conf.d    modules-load.d       python3       sgml               tmpfiles.d
 apparmor.d              crontab         gprofng.rc  ldap            mtab                 python3.12    shadow             ubuntu-advantage
 ```
-### option : -la
+#### option : -la
 ls command have many options, some useful options are as below
 ```
 ls -la
@@ -53,7 +53,7 @@ drwxr-xr-x  2 root  root       4096 Sep 27  2024 alternatives
 
 ```
 
-### option : -lt
+#### option : -lt
 if you want to sort the list content by time then use -lt option
 ```
 ls -lt
@@ -71,7 +71,7 @@ drwxr-xr-x 2 root  root       4096 Jun 11 22:51 gnutls
 drwxr-xr-x 2 root  root       4096 Jun 11 22:50 init.d
 ```
 
-### option: -ltr
+#### option: -ltr
 if you want to sort the list content by time in reverse order then use -ltr option
 ```
 ls -ltr
@@ -94,7 +94,7 @@ where:
 
 There are many other options, but I use above options in my day to day life 
 
-## pwd 
+### pwd 
 This command is used to print full path of current directory
 ```
 pwd [options]
@@ -108,7 +108,7 @@ It has several options as below
 -L, --logical: use PWD from environment, even if it contains symlinks
 -P, --physical: avoid all symlinks
 
-## cd 
+### cd 
 This command is used for navigation 
 ```
 cd [directory path where you want to go]
@@ -138,7 +138,7 @@ cd command also provides some shortcuts as below
 `cd -` : go to previous directory 
 
 
-## mkdir 
+### mkdir 
 This command is used to create new directory
 ```
 mkdir dir_name
@@ -151,7 +151,7 @@ testing
 root@Prabhu:~/prasad#
 ```
 
-## rmdir 
+### rmdir 
 This command is used to remove empty directory
 ```
 rmdir dir_name
@@ -167,9 +167,9 @@ root@Prabhu:~/prasad#
 > Note: this command can only delete empty folders, if you have any file / folder inside this folder then this command cannot be used.
 
 
-# Commands for file operations 
+## Commands for file operations 
 
-## touch
+### touch
 This command is used to create new empty file in folder or to update timestamp of existing file
 
 ```
@@ -185,7 +185,7 @@ test.txt
 root@Prabhu:~/prasad#
 ```
 
-## cp
+### cp
 This command is used to copy files and folders from one location to another location
 ```
 cp [options] source destination
@@ -219,6 +219,240 @@ drwxr-xr-x 2 root root 4096 Jun 11 23:38 ssh_config.d
 -rw-r--r-- 1 root root 1649 Jun 11 23:38 ssh_config
 root@Prabhu:~/prasad/ssh#
 ```
+
+### mv 
+This command is used to move the file or folder from one location to another or to rename the file 
+
+```
+mv source destination
+```
+
+Example 
+if you want to move file from one folder to another
+```
+root@Prabhu:~# mv prasad/test.txt shell/test.txt
+root@Prabhu:~# cd shell
+root@Prabhu:~/shell# ls -ltr
+total 12
+-rwxrwxrwx 1 root root  16 Jun 11 23:31 test.txt
+root@Prabhu:~/shell#
+```
+
+if you want to rename the file, then keep destnation same but change filename while execute mv command
+```
+root@Prabhu:~/shell# mv test.txt test2.txt
+root@Prabhu:~/shell# ls -ltr
+total 12
+-rwxrwxrwx 1 root root  16 Jun 11 23:31 test2.txt
+```
+
+### cat
+This command is used to print the content of file
+```
+cat [options] filename
+```
+Example, if you want to see content in file
+```
+root@Prabhu:~/shell# cat file.txt
+ this is prasad
+root@Prabhu:~/shell#
+```
+
+Example, if you want to read the content of one file and put it into another file as below
+
+```
+root@Prabhu:~/shell# cat test2.txt > file.txt
+root@Prabhu:~/shell# less file.txt
+
+ this is prasad
+file.txt (END)
+```
+
+### grep (Global regualar expression print)
+This command is very helpful if you want to search specific word from files
+```
+grep [options] pattern [filename]
+```
+
+Example: to search keyword in any specific file
+```
+root@Prabhu:~/shell# grep "prasad" file.txt
+ this is prasad
+```
+
+if you want to display line number in search result
+```
+root@Prabhu:~/shell# grep -n "prasad" file.txt
+1: this is prasad
+root@Prabhu:~/shell#
+```
+
+if you want to display count of number matches your pattern then use command sa below
+```
+root@Prabhu:~/shell# grep -c "prasad" file.txt
+1
+root@Prabhu:~/shell#
+```
+
+if you want to check if any specific keyword exists in which all files in folder
+```
+root@Prabhu:~/shell# grep -l "prasad" *
+exit.sh
+file.txt
+returnCode.sh
+test2.txt
+```
+
+### find 
+This command is used to search for file and directories based on name, type, size, data etc 
+```
+find [path] -options [expression]
+```
+where
+Path : where to start for sarch 
+Expression: Criteria like filename, size etc 
+Example, if you want to search if file with specific name in folder "shell"
+```
+root@Prabhu:~# find shell -name "file.txt"
+shell/file.txt
+root@Prabhu:~#
+```
+
+if you want to search by type/ extension 
+```
+root@Prabhu:~# find shell -name *.txt
+shell/file.txt
+shell/test2.txt
+root@Prabhu:~#
+```
+
+if  you want to search all files with specific permissions
+
+```
+root@Prabhu:~# find shell -perm 777
+shell/for.sh
+shell/functions.sh
+shell/if.sh
+shell/returnCode.sh
+shell/test2.txt
+shell/exit.sh
+root@Prabhu:~#
+```
+
+use `grep` and `find` together to search for specific keyword in file
+
+```
+root@Prabhu:~# find ./ -type f -name "*.txt" -exec grep "prasad" {} \;
+ this is prasad
+root@Prabhu:~#
+```
+
+### awk
+This command is used for pattern scanning and processing
+```
+awk options 'pattern {action}' input_file > output_file
+```
+Example
+Print all lines in file
+```
+root@Prabhu:~/shell# awk '{print}' file.txt
+ this is prasad
+root@Prabhu:~/shell#
+```
+
+print specific column 
+```
+root@Prabhu:~/prasad# awk '{print $1,$4}' sample.txt
+
+What Ipsum?
+
+Lorem simply
+Why use
+
+It long
+
+Where come
+
+Contrary belief,
+
+The of
+Where get
+
+There variations
+root@Prabhu:~/prasad#
+```
+
+
+### sed
+This command used to replace content in the file
+
+```
+sed 's/old_content/new_content/' file_name
+```
+Example, let's replace 'prasad' by 'prabhu' in file.txt
+
+```
+root@Prabhu:~/shell# cat file.txt
+ this is prasad
+```
+as you see file contain `this is prasad`
+
+now execute `sed` command to replace
+
+```
+root@Prabhu:~/shell# sed 's/prasad/prabhu/' file.txt
+ this is prabhu
+root@Prabhu:~/shell#
+```
+
+### less
+This command is used to read / print few lines in files, then we can enter space to remaining content and so on
+
+Below is syntax 
+```
+less file_name
+```
+> 1: enter q to exit fron reading mode
+> 2: if you want to search anything, then enter / followed by keyword example `/prasad` then press enter
+> 3: if you are in search mode, and you want to find next occurrence then press `n`
+> 4: if you are in search mode, and you want to find previous occurrence then press shift + `n`
+
+### head
+This command is used to print first few lines in file
+Below is syntax 
+```
+head file_name
+```
+
+### tail
+This command is used to print last few lines in file
+Below is syntax 
+```
+tail file_name
+```
+
+### diff
+This command is used to check difference in two files in same folder or different folder
+```
+diff file1 file2
+```
+example, if I want to find difference in file.txt and test2.txt in same folder
+```
+root@Prabhu:~/shell# diff file.txt test2.txt
+1c1
+<  this is prasad
+---
+>  this is prabhu
+root@Prabhu:~/shell#
+```
+
+
+
+
+
+
+
+
 
 
 
