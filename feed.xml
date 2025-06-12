@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://prasadgavande.in/feed.xml" rel="self" type="application/atom+xml"/><link href="https://prasadgavande.in/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-06-11T23:40:41+00:00</updated><id>https://prasadgavande.in/feed.xml</id><title type="html">blank</title><subtitle>Personal website | Technical blog</subtitle><entry><title type="html">Useful linux commands</title><link href="https://prasadgavande.in/blog/2025/Useful-linux-commands/" rel="alternate" type="text/html" title="Useful linux commands"/><published>2025-06-11T15:09:00+00:00</published><updated>2025-06-11T15:09:00+00:00</updated><id>https://prasadgavande.in/blog/2025/Useful-linux-commands</id><content type="html" xml:base="https://prasadgavande.in/blog/2025/Useful-linux-commands/"><![CDATA[<p>In this post, we are going to take a look on some essential and useful linux / unix commands that are being used for day to day operations</p> <h1 id="commands-for-directory-operations">Commands for directory operations</h1> <h2 id="ls">ls</h2> <p>This command is use to list content in folder</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls [options] [directory or path]
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://prasadgavande.in/feed.xml" rel="self" type="application/atom+xml"/><link href="https://prasadgavande.in/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-06-12T23:12:27+00:00</updated><id>https://prasadgavande.in/feed.xml</id><title type="html">blank</title><subtitle>Personal website | Technical blog</subtitle><entry><title type="html">Useful linux commands</title><link href="https://prasadgavande.in/blog/2025/Useful-linux-commands/" rel="alternate" type="text/html" title="Useful linux commands"/><published>2025-06-11T15:09:00+00:00</published><updated>2025-06-11T15:09:00+00:00</updated><id>https://prasadgavande.in/blog/2025/Useful-linux-commands</id><content type="html" xml:base="https://prasadgavande.in/blog/2025/Useful-linux-commands/"><![CDATA[<p>In this post, we are going to take a look on some essential and useful linux / unix commands that are being used for day to day operations</p> <h2 id="commands-for-directory-operations">Commands for directory operations</h2> <h3 id="ls">ls</h3> <p>This command is use to list content in folder</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls [options] [directory or path]
 </code></pre></div></div> <p>example , if I am inside /etc/ folder, and if I execute command then I can see all folders inside /etc/ folder as below</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:/etc# ls
 PackageKit              cron.daily      fstab       kernel          mime.types           polkit-1      selinux            sysctl.d
 X11                     cron.hourly     fuse.conf   landscape       mke2fs.conf          profile       sensors.d          systemd
@@ -6,7 +6,7 @@ adduser.conf            cron.monthly    gai.conf    ld.so.cache     modprobe.d  
 alternatives            cron.weekly     glvnd       ld.so.conf      modules              protocols     services           timezone
 apparmor                cron.yearly     gnutls      ld.so.conf.d    modules-load.d       python3       sgml               tmpfiles.d
 apparmor.d              crontab         gprofng.rc  ldap            mtab                 python3.12    shadow             ubuntu-advantage
-</code></pre></div></div> <h3 id="option---la">option : -la</h3> <p>ls command have many options, some useful options are as below</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -la
+</code></pre></div></div> <h4 id="option---la">option : -la</h4> <p>ls command have many options, some useful options are as below</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -la
 </code></pre></div></div> <p>where<br/> -l : use a long listing format -a, –all: do not ignore entries starting with .</p> <p>Example:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:/etc# ls -la
 total 808
 drwxr-xr-x 88 root  root       4096 Jun 11 22:51 .
@@ -19,14 +19,14 @@ drwxr-xr-x  7 root  root       4096 Sep 27  2024 X11
 -rw-r--r--  1 root  root       3444 Jul  5  2023 adduser.conf
 drwxr-xr-x  2 root  root       4096 Sep 27  2024 alternatives
 
-</code></pre></div></div> <h3 id="option---lt">option : -lt</h3> <p>if you want to sort the list content by time then use -lt option</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -lt
+</code></pre></div></div> <h4 id="option---lt">option : -lt</h4> <p>if you want to sort the list content by time then use -lt option</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -lt
 </code></pre></div></div> <p>where -t: sort by time, newest first; see –time</p> <p>Example:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:/etc# ls -lt
 total 792
 -rw-r--r-- 1 root  root      17607 Jun 11 22:51 ld.so.cache
 drwxr-xr-x 4 root  root       4096 Jun 11 22:51 ssl
 drwxr-xr-x 2 root  root       4096 Jun 11 22:51 gnutls
 drwxr-xr-x 2 root  root       4096 Jun 11 22:50 init.d
-</code></pre></div></div> <h3 id="option--ltr">option: -ltr</h3> <p>if you want to sort the list content by time in reverse order then use -ltr option</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -ltr
+</code></pre></div></div> <h4 id="option--ltr">option: -ltr</h4> <p>if you want to sort the list content by time in reverse order then use -ltr option</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -ltr
 </code></pre></div></div> <p>where</p> <p>Example:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:/etc# ls -ltr
 total 792
 -rw-r--r-- 1 root  root         45 Jan 24  2020 bash_completion
@@ -35,10 +35,10 @@ total 792
 -rw-r--r-- 1 root  root        367 Aug  2  2022 bindresvport.blacklist
 -rw-r--r-- 1 root  root        552 Oct 13  2022 pam.conf
 -rw-r--r-- 1 root  root       3144 Oct 17  2022 protocols
-</code></pre></div></div> <p>where: -r, –reverse: reverse order while sorting</p> <p>There are many other options, but I use above options in my day to day life</p> <h2 id="pwd">pwd</h2> <p>This command is used to print full path of current directory</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pwd [options]
+</code></pre></div></div> <p>where: -r, –reverse: reverse order while sorting</p> <p>There are many other options, but I use above options in my day to day life</p> <h3 id="pwd">pwd</h3> <p>This command is used to print full path of current directory</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pwd [options]
 </code></pre></div></div> <p>Example</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:/etc# pwd
 /etc
-</code></pre></div></div> <p>It has several options as below -L, –logical: use PWD from environment, even if it contains symlinks -P, –physical: avoid all symlinks</p> <h2 id="cd">cd</h2> <p>This command is used for navigation</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd [directory path where you want to go]
+</code></pre></div></div> <p>It has several options as below -L, –logical: use PWD from environment, even if it contains symlinks -P, –physical: avoid all symlinks</p> <h3 id="cd">cd</h3> <p>This command is used for navigation</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd [directory path where you want to go]
 </code></pre></div></div> <p>example, if I am inside /etc/ folder and I want to go to pm folder inside same directory then I will use following command</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:/etc# pwd
 /etc
 root@Prabhu:/etc# cd pm
@@ -47,25 +47,25 @@ root@Prabhu:/etc/pm#
 /etc/pm
 root@Prabhu:/etc/pm# cd /var/run/log
 root@Prabhu:/var/run/log#
-</code></pre></div></div> <p>cd command also provides some shortcuts as below</p> <p><code class="language-plaintext highlighter-rouge">cd</code> : returns to current user’s home directory</p> <p><code class="language-plaintext highlighter-rouge">cd ..</code> : go to one level up</p> <p><code class="language-plaintext highlighter-rouge">cd -</code> : go to previous directory</p> <h2 id="mkdir">mkdir</h2> <p>This command is used to create new directory</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir dir_name
+</code></pre></div></div> <p>cd command also provides some shortcuts as below</p> <p><code class="language-plaintext highlighter-rouge">cd</code> : returns to current user’s home directory</p> <p><code class="language-plaintext highlighter-rouge">cd ..</code> : go to one level up</p> <p><code class="language-plaintext highlighter-rouge">cd -</code> : go to previous directory</p> <h3 id="mkdir">mkdir</h3> <p>This command is used to create new directory</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir dir_name
 </code></pre></div></div> <p>Example</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/prasad# mkdir testing
 root@Prabhu:~/prasad# ls
 testing
 root@Prabhu:~/prasad#
-</code></pre></div></div> <h2 id="rmdir">rmdir</h2> <p>This command is used to remove empty directory</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rmdir dir_name
+</code></pre></div></div> <h3 id="rmdir">rmdir</h3> <p>This command is used to remove empty directory</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rmdir dir_name
 </code></pre></div></div> <p>Example</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/prasad# ls
 testing
 root@Prabhu:~/prasad# rmdir testing
 root@Prabhu:~/prasad# ls
 root@Prabhu:~/prasad#
-</code></pre></div></div> <blockquote> <p>Note: this command can only delete empty folders, if you have any file / folder inside this folder then this command cannot be used.</p> </blockquote> <h1 id="commands-for-file-operations">Commands for file operations</h1> <h2 id="touch">touch</h2> <p>This command is used to create new empty file in folder or to update timestamp of existing file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>touch [option] file_name.extension
+</code></pre></div></div> <blockquote> <p>Note: this command can only delete empty folders, if you have any file / folder inside this folder then this command cannot be used.</p> </blockquote> <h2 id="commands-for-file-operations">Commands for file operations</h2> <h3 id="touch">touch</h3> <p>This command is used to create new empty file in folder or to update timestamp of existing file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>touch [option] file_name.extension
 </code></pre></div></div> <p>Example:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/prasad# ls
 root@Prabhu:~/prasad#
 root@Prabhu:~/prasad# touch test.txt
 root@Prabhu:~/prasad# ls
 test.txt
 root@Prabhu:~/prasad#
-</code></pre></div></div> <h2 id="cp">cp</h2> <p>This command is used to copy files and folders from one location to another location</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp [options] source destination
+</code></pre></div></div> <h3 id="cp">cp</h3> <p>This command is used to copy files and folders from one location to another location</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp [options] source destination
 </code></pre></div></div> <p>Example</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~# cp prasad/test.txt shell/
 root@Prabhu:~# cd shell/
 root@Prabhu:~/shell# ls -ltr
@@ -85,6 +85,97 @@ total 8
 drwxr-xr-x 2 root root 4096 Jun 11 23:38 ssh_config.d
 -rw-r--r-- 1 root root 1649 Jun 11 23:38 ssh_config
 root@Prabhu:~/prasad/ssh#
+</code></pre></div></div> <h3 id="mv">mv</h3> <p>This command is used to move the file or folder from one location to another or to rename the file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mv source destination
+</code></pre></div></div> <p>Example if you want to move file from one folder to another</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~# mv prasad/test.txt shell/test.txt
+root@Prabhu:~# cd shell
+root@Prabhu:~/shell# ls -ltr
+total 12
+-rwxrwxrwx 1 root root  16 Jun 11 23:31 test.txt
+root@Prabhu:~/shell#
+</code></pre></div></div> <p>if you want to rename the file, then keep destnation same but change filename while execute mv command</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# mv test.txt test2.txt
+root@Prabhu:~/shell# ls -ltr
+total 12
+-rwxrwxrwx 1 root root  16 Jun 11 23:31 test2.txt
+</code></pre></div></div> <h3 id="cat">cat</h3> <p>This command is used to print the content of file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat [options] filename
+</code></pre></div></div> <p>Example, if you want to see content in file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# cat file.txt
+ this is prasad
+root@Prabhu:~/shell#
+</code></pre></div></div> <p>Example, if you want to read the content of one file and put it into another file as below</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# cat test2.txt &gt; file.txt
+root@Prabhu:~/shell# less file.txt
+
+ this is prasad
+file.txt (END)
+</code></pre></div></div> <h3 id="grep-global-regualar-expression-print">grep (Global regualar expression print)</h3> <p>This command is very helpful if you want to search specific word from files</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grep [options] pattern [filename]
+</code></pre></div></div> <p>Example: to search keyword in any specific file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# grep "prasad" file.txt
+ this is prasad
+</code></pre></div></div> <p>if you want to display line number in search result</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# grep -n "prasad" file.txt
+1: this is prasad
+root@Prabhu:~/shell#
+</code></pre></div></div> <p>if you want to display count of number matches your pattern then use command sa below</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# grep -c "prasad" file.txt
+1
+root@Prabhu:~/shell#
+</code></pre></div></div> <p>if you want to check if any specific keyword exists in which all files in folder</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# grep -l "prasad" *
+exit.sh
+file.txt
+returnCode.sh
+test2.txt
+</code></pre></div></div> <h3 id="find">find</h3> <p>This command is used to search for file and directories based on name, type, size, data etc</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find [path] -options [expression]
+</code></pre></div></div> <p>where Path : where to start for sarch Expression: Criteria like filename, size etc Example, if you want to search if file with specific name in folder “shell”</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~# find shell -name "file.txt"
+shell/file.txt
+root@Prabhu:~#
+</code></pre></div></div> <p>if you want to search by type/ extension</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~# find shell -name *.txt
+shell/file.txt
+shell/test2.txt
+root@Prabhu:~#
+</code></pre></div></div> <p>if you want to search all files with specific permissions</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~# find shell -perm 777
+shell/for.sh
+shell/functions.sh
+shell/if.sh
+shell/returnCode.sh
+shell/test2.txt
+shell/exit.sh
+root@Prabhu:~#
+</code></pre></div></div> <p>use <code class="language-plaintext highlighter-rouge">grep</code> and <code class="language-plaintext highlighter-rouge">find</code> together to search for specific keyword in file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~# find ./ -type f -name "*.txt" -exec grep "prasad" {} \;
+ this is prasad
+root@Prabhu:~#
+</code></pre></div></div> <h3 id="awk">awk</h3> <p>This command is used for pattern scanning and processing</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>awk options 'pattern {action}' input_file &gt; output_file
+</code></pre></div></div> <p>Example Print all lines in file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# awk '{print}' file.txt
+ this is prasad
+root@Prabhu:~/shell#
+</code></pre></div></div> <p>print specific column</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/prasad# awk '{print $1,$4}' sample.txt
+
+What Ipsum?
+
+Lorem simply
+Why use
+
+It long
+
+Where come
+
+Contrary belief,
+
+The of
+Where get
+
+There variations
+root@Prabhu:~/prasad#
+</code></pre></div></div> <h3 id="sed">sed</h3> <p>This command used to replace content in the file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sed 's/old_content/new_content/' file_name
+</code></pre></div></div> <p>Example, let’s replace ‘prasad’ by ‘prabhu’ in file.txt</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# cat file.txt
+ this is prasad
+</code></pre></div></div> <p>as you see file contain <code class="language-plaintext highlighter-rouge">this is prasad</code></p> <p>now execute <code class="language-plaintext highlighter-rouge">sed</code> command to replace</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# sed 's/prasad/prabhu/' file.txt
+ this is prabhu
+root@Prabhu:~/shell#
+</code></pre></div></div> <h3 id="less">less</h3> <p>This command is used to read / print few lines in files, then we can enter space to remaining content and so on</p> <p>Below is syntax</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>less file_name
+</code></pre></div></div> <blockquote> <p>1: enter q to exit fron reading mode 2: if you want to search anything, then enter / followed by keyword example <code class="language-plaintext highlighter-rouge">/prasad</code> then press enter 3: if you are in search mode, and you want to find next occurrence then press <code class="language-plaintext highlighter-rouge">n</code> 4: if you are in search mode, and you want to find previous occurrence then press shift + <code class="language-plaintext highlighter-rouge">n</code></p> </blockquote> <h3 id="head">head</h3> <p>This command is used to print first few lines in file Below is syntax</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>head file_name
+</code></pre></div></div> <h3 id="tail">tail</h3> <p>This command is used to print last few lines in file Below is syntax</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tail file_name
+</code></pre></div></div> <h3 id="diff">diff</h3> <p>This command is used to check difference in two files in same folder or different folder</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>diff file1 file2
+</code></pre></div></div> <p>example, if I want to find difference in file.txt and test2.txt in same folder</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# diff file.txt test2.txt
+1c1
+&lt;  this is prasad
+---
+&gt;  this is prabhu
+root@Prabhu:~/shell#
 </code></pre></div></div>]]></content><author><name></name></author><category term="commands"/><category term="linux,"/><category term="unix,"/><category term="commands"/><summary type="html"><![CDATA[Some essential and useful linux commands for day to day operations]]></summary></entry><entry><title type="html">Trying to understand Shell Scripting</title><link href="https://prasadgavande.in/blog/2025/traying-to-understand-shell-scripting/" rel="alternate" type="text/html" title="Trying to understand Shell Scripting"/><published>2025-06-09T15:09:00+00:00</published><updated>2025-06-09T15:09:00+00:00</updated><id>https://prasadgavande.in/blog/2025/traying-to-understand-shell-scripting</id><content type="html" xml:base="https://prasadgavande.in/blog/2025/traying-to-understand-shell-scripting/"><![CDATA[<p>In this post, we are trying to understand about shell scripting. As per wikipedia, A shell script is a computer program designed to be run by a Unix shell, a command-line interpreter. A script is command line program that contains a series of commands. The commands contained in the script are executed by interpreter. In case of shell scripts, the shell acts as interpreter and executes the commands listed in the script one after another.</p> <p>Let’s create our first shell script</p> <p>Create a new file in your Unix / Linux operating system. I have ubuntu with me, so I will create new file using touch command</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">touch </span>firstScript.sh
 </code></pre></div></div> <p>Then open file with your favorite editor, I am using VIM editor.</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim firstScript.sh
 </code></pre></div></div> <p>it will open file in edit mode, press “I” to go to insert mode</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
