@@ -42,6 +42,7 @@ createFile() {
 Create function to read file
 > It's good habit to check if file is exists before perform operaitons, so lets check if file exists or not, then perform read operation
 > otherwise let user know that file does not exist
+
 ```
 readFile(){
         if [ -f "$fileName" ]; then
