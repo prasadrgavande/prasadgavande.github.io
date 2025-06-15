@@ -7,7 +7,7 @@ read -p "Enter file name: " fileName
         touch "$fileName"
         echo "file created with name: $fileName"
 }
-</code></pre></div></div> <p>Create function to read file</p> <blockquote> <p>It’s good habit to check if file is exists before perform operaitons, so lets check if file exists or not, then perform read operation otherwise let user know that file does not exist</p> <div class="language-plaintext highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>readFile(){
+</code></pre></div></div> <p>Create function to read file</p> <blockquote> <p>It’s good habit to check if file is exists before perform operaitons, so lets check if file exists or not, then perform read operation otherwise let user know that file does not exist</p> </blockquote> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>readFile(){
         if [ -f "$fileName" ]; then
                 echo "content in file as below"
                 cat $fileName
@@ -15,13 +15,13 @@ read -p "Enter file name: " fileName
                 echo "file does not exists"
         fi
 }
-</code></pre></div> </div> <p>Create function to write file</p> <div class="language-plaintext highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>writeFile(){
+</code></pre></div></div> <p>Create function to write file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>writeFile(){
         echo "Enter content you want to write to file"
         read content
         echo "$content" &gt;&gt; "$fileName" ## append content mode
         echo "Content has been written to file"
 }
-</code></pre></div> </div> <p>here we are using append mode to write content in file, because we dont wan to loose old data. if you dont want to use append mode then simply modify arraw operator as below <code class="language-plaintext highlighter-rouge">echo "$content" &gt; "$fileName"</code></p> </blockquote> <p>Create function to delete file As mentioned above, first check if file exists or not before you delete the file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deleteFile(){
+</code></pre></div></div> <blockquote> <p>here we are using append mode to write content in file, because we dont wan to loose old data. if you dont want to use append mode then simply modify arraw operator as below <code class="language-plaintext highlighter-rouge">echo "$content" &gt; "$fileName"</code></p> </blockquote> <p>Create function to delete file As mentioned above, first check if file exists or not before you delete the file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deleteFile(){
         if [ -f "$fileName" ]; then
                 rm $fileName
                 echo "file has been deleted"
