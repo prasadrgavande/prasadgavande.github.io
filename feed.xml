@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://prasadgavande.in/feed.xml" rel="self" type="application/atom+xml"/><link href="https://prasadgavande.in/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-06-12T23:35:55+00:00</updated><id>https://prasadgavande.in/feed.xml</id><title type="html">blank</title><subtitle>Personal website | Technical blog</subtitle><entry><title type="html">Useful linux commands</title><link href="https://prasadgavande.in/blog/2025/Useful-linux-commands/" rel="alternate" type="text/html" title="Useful linux commands"/><published>2025-06-11T15:09:00+00:00</published><updated>2025-06-11T15:09:00+00:00</updated><id>https://prasadgavande.in/blog/2025/Useful-linux-commands</id><content type="html" xml:base="https://prasadgavande.in/blog/2025/Useful-linux-commands/"><![CDATA[<p>In this post, we are going to take a look on some essential and useful linux / unix commands that are being used for day to day operations</p> <h2 id="commands-for-directory-operations">Commands for directory operations</h2> <h3 id="ls">ls</h3> <p>This command is use to list content in folder</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls [options] [directory or path]
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://prasadgavande.in/feed.xml" rel="self" type="application/atom+xml"/><link href="https://prasadgavande.in/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-06-15T23:21:40+00:00</updated><id>https://prasadgavande.in/feed.xml</id><title type="html">blank</title><subtitle>Personal website | Technical blog</subtitle><entry><title type="html">File Operations with shell script</title><link href="https://prasadgavande.in/blog/2025/file-operations-with-shell-script/" rel="alternate" type="text/html" title="File Operations with shell script"/><published>2025-06-15T15:09:00+00:00</published><updated>2025-06-15T15:09:00+00:00</updated><id>https://prasadgavande.in/blog/2025/file-operations-with-shell-script</id><content type="html" xml:base="https://prasadgavande.in/blog/2025/file-operations-with-shell-script/"><![CDATA[<p>In this tutorial we will try to perform basic file operations like create, write, read, delete file using shell script. Let’s get started with this.</p> <p>As usual lets create new file using editor of your choice, I am using <code class="language-plaintext highlighter-rouge">vi</code> editor.</p> <p><code class="language-plaintext highlighter-rouge">vi fileOps.sh</code></p> <p>This will create new file and open editor for you. We will create all function for common operations of file and then we will call them using switch cases, so that user can perform whatever operations he want!</p> <p>Script will as user to enter file name first in which he want to perform operations</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+
+# prompt user to enter file name
+
+read -p "Enter file name: " fileName
+</code></pre></div></div> <p>Lets create functions first.</p> <p>create function which will help us to create file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>createFile() {
+        touch "$fileName"
+        echo "file created with name: $fileName"
+}
+</code></pre></div></div> <p>Create function to read file</p> <blockquote> <p>It’s good habit to check if file is exists before perform operaitons, so lets check if file exists or not, then perform read operation otherwise let user know that file does not exist</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>readFile(){
+        if [ -f "$fileName" ]; then
+                echo "content in file as below"
+                cat $fileName
+        else
+                echo "file does not exists"
+        fi
+}
+</code></pre></div> </div> <p>Create function to write file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>writeFile(){
+        echo "Enter content you want to write to file"
+        read content
+        echo "$content" &gt;&gt; "$fileName" ## append content mode
+        echo "Content has been written to file"
+}
+</code></pre></div> </div> <p>here we are using append mode to write content in file, because we dont wan to loose old data. if you dont want to use append mode then simply modify arraw operator as below <code class="language-plaintext highlighter-rouge">echo "$content" &gt; "$fileName"</code></p> </blockquote> <p>Create function to delete file As mentioned above, first check if file exists or not before you delete the file</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deleteFile(){
+        if [ -f "$fileName" ]; then
+                rm $fileName
+                echo "file has been deleted"
+        else
+                echo "File does not exists"
+        fi
+}
+</code></pre></div></div> <p>Now, all our required functions are created, lets write function calling Here we are going to as user which operations he want to perform using switch-case conditions</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "Choice Operation you want to perform on file"
+echo "1. Create File"
+echo "2. Read file"
+echo "3. Write file"
+echo "4. Delete file"
+read -p "Enter Choice" choice
+case $choice in
+        1) createFile ;;
+        2) readFile ;;
+        3) writeFile ;;
+        4) deleteFile;;
+        *) echo "Invalid choice"
+esac
+</code></pre></div></div> <p>That’s it, we are ready to execute this script save the file, give required permissions to file</p> <p><code class="language-plaintext highlighter-rouge">chmod 777 fileOps.sh</code></p> <p>Now, run this executable using below command</p> <p><code class="language-plaintext highlighter-rouge">./fileOps.sh</code> Once we run below command, it will run executable, let’s create new file with name <code class="language-plaintext highlighter-rouge">sample.txt</code></p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter file name: sample.txt
+Choice Operation you want to perform on file
+1. Create File
+2. Read file
+3. Write file
+4. Delete file
+Enter Choice 1
+file created with name: sample.txt
+</code></pre></div></div> <p>check if file get created or not</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# ls -ltr
+total 12
+-rwxrwxrwx 1 root root 916 Jun 15 23:15 fileOps.sh
+-rw-r--r-- 1 root root   0 Jun 15 23:19 sample.txt
+root@Prabhu:~/shell#
+
+</code></pre></div></div> <p>Run again to perform write operations</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# ./fileOps.sh
+Enter file name: sample.txt
+Choice Operation you want to perform on file
+1. Create File
+2. Read file
+3. Write file
+4. Delete file
+Enter Choice3
+Enter content you want to write to file
+this is sample content added in file
+Content has been written to file
+root@Prabhu:~/shell#
+</code></pre></div></div> <p>Run again to perform read operations</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# ./fileOps.sh
+Enter file name: sample.txt
+Choice Operation you want to perform on file
+1. Create File
+2. Read file
+3. Write file
+4. Delete file
+Enter Choice2
+content in file as below
+this is sample content added in file
+root@Prabhu:~/shell#
+</code></pre></div></div> <p>Run again to perform delete operations</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# ./fileOps.sh
+Enter file name: sample.txt
+Choice Operation you want to perform on file
+1. Create File
+2. Read file
+3. Write file
+4. Delete file
+Enter Choice4
+file has been deleted
+</code></pre></div></div> <p>check if file get deleted or not</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:~/shell# ls -ltr
+total 11
+-rwxrwxrwx 1 root root 916 Jun 15 23:15 fileOps.sh
+root@Prabhu:~/shell#
+</code></pre></div></div>]]></content><author><name></name></author><category term="scripting"/><category term="code,"/><category term="shell"/><summary type="html"><![CDATA[Tutorial for basics file operations using Shell scripting]]></summary></entry><entry><title type="html">Useful linux commands</title><link href="https://prasadgavande.in/blog/2025/Useful-linux-commands/" rel="alternate" type="text/html" title="Useful linux commands"/><published>2025-06-11T15:09:00+00:00</published><updated>2025-06-11T15:09:00+00:00</updated><id>https://prasadgavande.in/blog/2025/Useful-linux-commands</id><content type="html" xml:base="https://prasadgavande.in/blog/2025/Useful-linux-commands/"><![CDATA[<p>In this post, we are going to take a look on some essential and useful linux / unix commands that are being used for day to day operations</p> <h2 id="commands-for-directory-operations">Commands for directory operations</h2> <h3 id="ls">ls</h3> <p>This command is use to list content in folder</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls [options] [directory or path]
 </code></pre></div></div> <p>example , if I am inside /etc/ folder, and if I execute command then I can see all folders inside /etc/ folder as below</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@Prabhu:/etc# ls
 PackageKit              cron.daily      fstab       kernel          mime.types           polkit-1      selinux            sysctl.d
 X11                     cron.hourly     fuse.conf   landscape       mke2fs.conf          profile       sensors.d          systemd
