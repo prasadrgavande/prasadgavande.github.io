@@ -42,6 +42,7 @@ int main()
 
 ![output1](https://raw.githubusercontent.com/prasadrgavande/prasadgavande.github.io/refs/heads/master/assets/img/6-trying-to-understand-constructors/output1.png)
 
+
 As you see, it has some random value assigned for `int id` which is not accepted value. 
 
 That means compiler has assigned some remaining or random value to our `int` variable.
@@ -87,6 +88,7 @@ int main()
 ```
 
 Run program and check output.
+
 ![output2](https://raw.githubusercontent.com/prasadrgavande/prasadgavande.github.io/refs/heads/master/assets/img/6-trying-to-understand-constructors/output2.png)
 
 this seems works well, as we can see values to variable `id` and `name` assiend correctly. 
@@ -158,6 +160,7 @@ As we can see, we have new public function with same name as of class, `student`
 In that function we have just assiged values to our member functions.
 
 Now, run this program to check output
+
 ![output3](https://raw.githubusercontent.com/prasadrgavande/prasadgavande.github.io/refs/heads/master/assets/img/6-trying-to-understand-constructors/output3.png)
 
 As we can see, we can assign value without init function. 
@@ -212,6 +215,7 @@ int main()
 }
 ```
 Run this program and check output
+
 ![output4](https://raw.githubusercontent.com/prasadrgavande/prasadgavande.github.io/refs/heads/master/assets/img/6-trying-to-understand-constructors/output4.png)
 
 This is how we can create constructor , use them to initilize the value and keep our code clean. 
