@@ -1,4 +1,367 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://prasadgavande.in/feed.xml" rel="self" type="application/atom+xml"/><link href="https://prasadgavande.in/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-10-13T17:08:52+00:00</updated><id>https://prasadgavande.in/feed.xml</id><title type="html">blank</title><subtitle>Personal website | Technical blog</subtitle><entry><title type="html">Trying to understand Constructors in c++</title><link href="https://prasadgavande.in/blog/2025/trying_to_understand_constructors_cpp/" rel="alternate" type="text/html" title="Trying to understand Constructors in c++"/><published>2025-10-13T15:09:00+00:00</published><updated>2025-10-13T15:09:00+00:00</updated><id>https://prasadgavande.in/blog/2025/trying_to_understand_constructors_cpp</id><content type="html" xml:base="https://prasadgavande.in/blog/2025/trying_to_understand_constructors_cpp/"><![CDATA[<p>In this post we are trying to understand what is construtors in c++.</p> <p>Lets create a basic example of class in c++</p> <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Student</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://prasadgavande.in/feed.xml" rel="self" type="application/atom+xml"/><link href="https://prasadgavande.in/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-12-13T20:11:13+00:00</updated><id>https://prasadgavande.in/feed.xml</id><title type="html">blank</title><subtitle>Personal website | Technical blog</subtitle><entry><title type="html">Trying to understand SOLID Principles with C#</title><link href="https://prasadgavande.in/blog/2025/trying_to_understand_solid_principles/" rel="alternate" type="text/html" title="Trying to understand SOLID Principles with C#"/><published>2025-12-13T15:09:00+00:00</published><updated>2025-12-13T15:09:00+00:00</updated><id>https://prasadgavande.in/blog/2025/trying_to_understand_solid_principles</id><content type="html" xml:base="https://prasadgavande.in/blog/2025/trying_to_understand_solid_principles/"><![CDATA[<p>The <strong>SOLID Principles</strong> are five fundamental principles of object-oriented class design introduced by <strong>Robert C. Martin</strong> (also known as “Uncle Bob”). The acronym “SOLID” was later coined by <strong>Michael Feathers</strong>.</p> <p>These principles provide guidelines and best practices for designing class structures that are:</p> <ul> <li><strong>Understandable</strong> - Easy to read and comprehend</li> <li><strong>Readable</strong> - Clear and well-organized code</li> <li><strong>Testable</strong> - Can be easily tested</li> </ul> <h3 id="the-five-principles">The Five Principles</h3> <table> <thead> <tr> <th>Principle</th> <th>Full Name</th> </tr> </thead> <tbody> <tr> <td>S</td> <td>Single Responsibility Principle</td> </tr> <tr> <td>O</td> <td>Open-Closed Principle</td> </tr> <tr> <td>L</td> <td>Liskov Substitution Principle</td> </tr> <tr> <td>I</td> <td>Interface Segregation Principle</td> </tr> <tr> <td>D</td> <td>Dependency Inversion Principle</td> </tr> </tbody> </table> <hr/> <h2 id="why-solid-principles-matter">Why SOLID Principles Matter</h2> <p>When working on large projects in a team environment, simply writing code that executes correctly is not enough. Your code must be:</p> <ol> <li><strong>Maintainable</strong> - Other developers on your team should understand your code</li> <li><strong>Testable</strong> - Code should be easy to test</li> <li><strong>Scalable</strong> - Code should support team collaboration on the same codebase</li> </ol> <p>Following SOLID principles ensures that your codebase remains flexible, extensible, and maintainable as the project grows.</p> <hr/> <h2 id="single-responsibility-principle">Single Responsibility Principle</h2> <h3 id="definition">Definition</h3> <p>A class should have only <strong>one responsibility</strong> and should have <strong>only one reason to change</strong>.</p> <h3 id="problem-example">Problem Example</h3> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Circle</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Radius</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">CalculateArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span> <span class="p">*</span> <span class="n">Radius</span> <span class="p">*</span> <span class="n">Radius</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Circle</span> <span class="n">circle</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Circle</span> <span class="p">{</span> <span class="n">Radius</span> <span class="p">=</span> <span class="m">5</span> <span class="p">};</span>
+        
+        <span class="c1">// Multiple responsibilities:</span>
+        <span class="c1">// 1. Creating and managing the circle</span>
+        <span class="kt">double</span> <span class="n">area</span> <span class="p">=</span> <span class="n">circle</span><span class="p">.</span><span class="nf">CalculateArea</span><span class="p">();</span>  <span class="c1">// Calculation responsibility</span>
+        
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Area: </span><span class="p">{</span><span class="n">area</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>    <span class="c1">// Printing responsibility</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Issues:</strong> The <code class="language-plaintext highlighter-rouge">Program</code> class has three responsibilities:</p> <ol> <li>Core application logic</li> <li>Area calculation</li> <li>Printing output</li> </ol> <h3 id="solution">Solution</h3> <p><strong>Step 1:</strong> Move area calculation to the <code class="language-plaintext highlighter-rouge">Circle</code> class</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Circle</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Radius</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span> <span class="p">*</span> <span class="n">Radius</span> <span class="p">*</span> <span class="n">Radius</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Step 2:</strong> Create a separate <code class="language-plaintext highlighter-rouge">Printer</code> class for output responsibility</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Printer</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">PrintArea</span><span class="p">(</span><span class="n">Circle</span> <span class="n">circle</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Area: </span><span class="p">{</span><span class="n">circle</span><span class="p">.</span><span class="nf">GetArea</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Circle</span> <span class="n">circle</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Circle</span> <span class="p">{</span> <span class="n">Radius</span> <span class="p">=</span> <span class="m">5</span> <span class="p">};</span>
+        <span class="n">Printer</span> <span class="n">printer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Printer</span><span class="p">();</span>
+        <span class="n">printer</span><span class="p">.</span><span class="nf">PrintArea</span><span class="p">(</span><span class="n">circle</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Result:</strong> Each class now has a single, well-defined responsibility:</p> <ul> <li><code class="language-plaintext highlighter-rouge">Circle</code> - Manages circle data and calculations</li> <li><code class="language-plaintext highlighter-rouge">Printer</code> - Handles output</li> <li><code class="language-plaintext highlighter-rouge">Program</code> - Orchestrates the application flow</li> </ul> <hr/> <h2 id="open-closed-principle">Open-Closed Principle</h2> <h3 id="definition-1">Definition</h3> <p>A class should be <strong>open for extension</strong> but <strong>closed for modification</strong>.</p> <p>This means adding new functionality should not require changing existing code.</p> <h3 id="problem-example-1">Problem Example</h3> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Circle</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Radius</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span> <span class="p">*</span> <span class="n">Radius</span> <span class="p">*</span> <span class="n">Radius</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Rectangle</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Length</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Width</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Length</span> <span class="p">*</span> <span class="n">Width</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Circle</span> <span class="n">circle</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Circle</span> <span class="p">{</span> <span class="n">Radius</span> <span class="p">=</span> <span class="m">5</span> <span class="p">};</span>
+        <span class="n">Rectangle</span> <span class="n">rect</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Rectangle</span> <span class="p">{</span> <span class="n">Length</span> <span class="p">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">Width</span> <span class="p">=</span> <span class="m">6</span> <span class="p">};</span>
+        
+        <span class="c1">// Problem: Need separate methods for each shape</span>
+        <span class="nf">CalculateArea</span><span class="p">(</span><span class="n">circle</span><span class="p">);</span>
+        <span class="nf">CalculateArea</span><span class="p">(</span><span class="n">rect</span><span class="p">);</span>  <span class="c1">// This method doesn't exist - need to create new ones</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Issue:</strong> Every time you add a new shape, you must modify the <code class="language-plaintext highlighter-rouge">Program</code> and <code class="language-plaintext highlighter-rouge">Printer</code> classes to handle it.</p> <h3 id="solution-use-abstraction-through-interface">Solution: Use Abstraction through Interface</h3> <p><strong>Step 1:</strong> Create an interface for all shapes</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">interface</span> <span class="nc">IShape</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Step 2:</strong> Implement the interface in shape classes</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Circle</span> <span class="p">:</span> <span class="n">IShape</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Radius</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span> <span class="p">*</span> <span class="n">Radius</span> <span class="p">*</span> <span class="n">Radius</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">:</span> <span class="n">IShape</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Length</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Width</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Length</span> <span class="p">*</span> <span class="n">Width</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Step 3:</strong> Update the Printer class to work with the interface</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Printer</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">PrintArea</span><span class="p">(</span><span class="n">IShape</span> <span class="n">shape</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Area: </span><span class="p">{</span><span class="n">shape</span><span class="p">.</span><span class="nf">GetArea</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Circle</span> <span class="n">circle</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Circle</span> <span class="p">{</span> <span class="n">Radius</span> <span class="p">=</span> <span class="m">5</span> <span class="p">};</span>
+        <span class="n">Rectangle</span> <span class="n">rect</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Rectangle</span> <span class="p">{</span> <span class="n">Length</span> <span class="p">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">Width</span> <span class="p">=</span> <span class="m">6</span> <span class="p">};</span>
+        
+        <span class="n">Printer</span> <span class="n">printer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Printer</span><span class="p">();</span>
+        <span class="n">printer</span><span class="p">.</span><span class="nf">PrintArea</span><span class="p">(</span><span class="n">circle</span><span class="p">);</span>   <span class="c1">// Works!</span>
+        <span class="n">printer</span><span class="p">.</span><span class="nf">PrintArea</span><span class="p">(</span><span class="n">rect</span><span class="p">);</span>     <span class="c1">// Works!</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Step 4:</strong> Add new shapes without modifying existing code</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Triangle</span> <span class="p">:</span> <span class="n">IShape</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Base</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Height</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="m">0.5</span> <span class="p">*</span> <span class="n">Base</span> <span class="p">*</span> <span class="n">Height</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// No changes needed to Program or Printer classes!</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Triangle</span> <span class="n">triangle</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Triangle</span> <span class="p">{</span> <span class="n">Base</span> <span class="p">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">Height</span> <span class="p">=</span> <span class="m">10</span> <span class="p">};</span>
+        <span class="n">Printer</span> <span class="n">printer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Printer</span><span class="p">();</span>
+        <span class="n">printer</span><span class="p">.</span><span class="nf">PrintArea</span><span class="p">(</span><span class="n">triangle</span><span class="p">);</span>  <span class="c1">// Works!</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Result:</strong> The code is now open for extension (add new shapes) without modification (no changes to existing classes).</p> <hr/> <h2 id="liskov-substitution-principle">Liskov Substitution Principle</h2> <h3 id="definition-2">Definition</h3> <p>Child classes (derived classes) must be able to substitute their parent classes without breaking the application.</p> <p>In other words, derived classes should properly implement the contract of their base class.</p> <h3 id="problem-example-2">Problem Example</h3> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Rectangle</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Length</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Width</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Length</span> <span class="p">*</span> <span class="n">Width</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Square</span> <span class="p">:</span> <span class="n">Rectangle</span>
+<span class="p">{</span>
+    <span class="c1">// A square must have equal length and width</span>
+    <span class="c1">// But Rectangle allows independent length and width</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Issue:</strong> A <code class="language-plaintext highlighter-rouge">Square</code> inheriting from <code class="language-plaintext highlighter-rouge">Rectangle</code> creates a logical problem:</p> <ul> <li>User expects to set <code class="language-plaintext highlighter-rouge">Length</code> and <code class="language-plaintext highlighter-rouge">Width</code> independently on a Rectangle</li> <li>A Square must keep <code class="language-plaintext highlighter-rouge">Length</code> and <code class="language-plaintext highlighter-rouge">Width</code> equal</li> <li>When user sets <code class="language-plaintext highlighter-rouge">Length = 5</code> and <code class="language-plaintext highlighter-rouge">Width = 3</code>, it violates the square property</li> <li>If we override <code class="language-plaintext highlighter-rouge">Width</code> to always equal <code class="language-plaintext highlighter-rouge">Length</code>, we violate Rectangle’s contract</li> </ul> <p>This violates the Liskov Substitution Principle because you cannot substitute a <code class="language-plaintext highlighter-rouge">Square</code> for a <code class="language-plaintext highlighter-rouge">Rectangle</code> without breaking expected behavior.</p> <h3 id="solution-1">Solution</h3> <p><strong>Step 1:</strong> Create a proper interface hierarchy</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">interface</span> <span class="nc">IShape</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">ITwoDShape</span> <span class="p">:</span> <span class="n">IShape</span>
+<span class="p">{</span>
+    <span class="c1">// For 2D shapes</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">IThreeDShape</span> <span class="p">:</span> <span class="n">IShape</span>
+<span class="p">{</span>
+    <span class="c1">// For 3D shapes</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Step 2:</strong> Implement shapes correctly based on their hierarchy</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">:</span> <span class="n">ITwoDShape</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Length</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Width</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Length</span> <span class="p">*</span> <span class="n">Width</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Square</span> <span class="p">:</span> <span class="n">ITwoDShape</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Side</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Side</span> <span class="p">*</span> <span class="n">Side</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Result:</strong> Now <code class="language-plaintext highlighter-rouge">Square</code> and <code class="language-plaintext highlighter-rouge">Rectangle</code> are independent implementations of <code class="language-plaintext highlighter-rouge">IShape</code>, each correctly implementing their own contract. Neither is a substitution for the other—they’re separate shape types.</p> <hr/> <h2 id="interface-segregation-principle">Interface Segregation Principle</h2> <h3 id="definition-3">Definition</h3> <p>Clients should not be forced to implement methods they don’t use.</p> <p>It’s better to have many specific interfaces than one general-purpose interface.</p> <h3 id="problem-example-3">Problem Example</h3> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">interface</span> <span class="nc">IShape</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">();</span>
+    <span class="kt">double</span> <span class="nf">GetVolume</span><span class="p">();</span>  <span class="c1">// Not all shapes have volume!</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Circle</span> <span class="p">:</span> <span class="n">IShape</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Radius</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span> <span class="p">*</span> <span class="n">Radius</span> <span class="p">*</span> <span class="n">Radius</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetVolume</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Circle has no volume - forced to implement dummy method!</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">NotImplementedException</span><span class="p">(</span><span class="s">"Circle is 2D and has no volume"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Cube</span> <span class="p">:</span> <span class="n">IShape</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Side</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Misleading - cube has surface area, not a single "area"</span>
+        <span class="k">return</span> <span class="m">6</span> <span class="p">*</span> <span class="n">Side</span> <span class="p">*</span> <span class="n">Side</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetVolume</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Side</span> <span class="p">*</span> <span class="n">Side</span> <span class="p">*</span> <span class="n">Side</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Issues:</strong></p> <ul> <li>Circle is forced to implement <code class="language-plaintext highlighter-rouge">GetVolume()</code> which is not applicable</li> <li>Cube’s <code class="language-plaintext highlighter-rouge">GetArea()</code> is ambiguous (surface area vs. 2D area concept)</li> <li>Classes implement methods they don’t logically need</li> </ul> <h3 id="solution-segregate-interfaces">Solution: Segregate Interfaces</h3> <p><strong>Step 1:</strong> Create separate interfaces for different shape types</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">interface</span> <span class="nc">ITwoDShape</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">IThreeDShape</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="nf">GetVolume</span><span class="p">();</span>
+    <span class="kt">double</span> <span class="nf">GetSurfaceArea</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">IShape</span>
+<span class="p">{</span>
+    <span class="c1">// Common interface with no methods or only essential ones</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Step 2:</strong> Implement appropriately</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Circle</span> <span class="p">:</span> <span class="n">ITwoDShape</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Radius</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span> <span class="p">*</span> <span class="n">Radius</span> <span class="p">*</span> <span class="n">Radius</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">:</span> <span class="n">ITwoDShape</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Length</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Width</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Length</span> <span class="p">*</span> <span class="n">Width</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Cube</span> <span class="p">:</span> <span class="n">IThreeDShape</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Side</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetVolume</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Side</span> <span class="p">*</span> <span class="n">Side</span> <span class="p">*</span> <span class="n">Side</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="kt">double</span> <span class="nf">GetSurfaceArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="m">6</span> <span class="p">*</span> <span class="n">Side</span> <span class="p">*</span> <span class="n">Side</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Step 3:</strong> Use appropriate interfaces in methods</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Printer</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">PrintTwoDShape</span><span class="p">(</span><span class="n">ITwoDShape</span> <span class="n">shape</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"2D Area: </span><span class="p">{</span><span class="n">shape</span><span class="p">.</span><span class="nf">GetArea</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">PrintThreeDShape</span><span class="p">(</span><span class="n">IThreeDShape</span> <span class="n">shape</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"3D Volume: </span><span class="p">{</span><span class="n">shape</span><span class="p">.</span><span class="nf">GetVolume</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Surface Area: </span><span class="p">{</span><span class="n">shape</span><span class="p">.</span><span class="nf">GetSurfaceArea</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Result:</strong> Each class only implements the methods it needs. No forced implementations of irrelevant methods.</p> <hr/> <h2 id="dependency-inversion-principle">Dependency Inversion Principle</h2> <h3 id="definition-4">Definition</h3> <p>High-level classes should not depend directly on low-level classes. Both should depend on <strong>abstractions</strong> (interfaces).</p> <h3 id="problem-example-4">Problem Example</h3> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Printer</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Print</span><span class="p">(</span><span class="n">IShape</span> <span class="n">shape</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Area: </span><span class="p">{</span><span class="n">shape</span><span class="p">.</span><span class="nf">GetArea</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Printer</span> <span class="n">printer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Printer</span><span class="p">();</span>
+        <span class="n">Circle</span> <span class="n">circle</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Circle</span> <span class="p">{</span> <span class="n">Radius</span> <span class="p">=</span> <span class="m">5</span> <span class="p">};</span>
+        <span class="n">printer</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="n">circle</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Issue:</strong> If later you want to use a different printer (e.g., <code class="language-plaintext highlighter-rouge">FilePrinter</code>, <code class="language-plaintext highlighter-rouge">CSVPrinter</code>, <code class="language-plaintext highlighter-rouge">ConsolePrinter</code>), you must modify the <code class="language-plaintext highlighter-rouge">Program</code> class and update all dependencies. The method signature and class structure might differ across implementations.</p> <h3 id="solution-depend-on-abstraction">Solution: Depend on Abstraction</h3> <p><strong>Step 1:</strong> Create an interface for printers</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">interface</span> <span class="nc">IPrinter</span>
+<span class="p">{</span>
+    <span class="k">void</span> <span class="nf">Print</span><span class="p">(</span><span class="n">ITwoDShape</span> <span class="n">shape</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Step 2:</strong> Implement different printer types</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">ConsolePrinter</span> <span class="p">:</span> <span class="n">IPrinter</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Print</span><span class="p">(</span><span class="n">ITwoDShape</span> <span class="n">shape</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Console Area: </span><span class="p">{</span><span class="n">shape</span><span class="p">.</span><span class="nf">GetArea</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">FilePrinter</span> <span class="p">:</span> <span class="n">IPrinter</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Print</span><span class="p">(</span><span class="n">ITwoDShape</span> <span class="n">shape</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">File</span><span class="p">.</span><span class="nf">WriteAllText</span><span class="p">(</span><span class="s">"output.txt"</span><span class="p">,</span> <span class="s">$"File Area: </span><span class="p">{</span><span class="n">shape</span><span class="p">.</span><span class="nf">GetArea</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Step 3:</strong> Depend on the abstraction</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">IPrinter</span> <span class="n">printer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ConsolePrinter</span><span class="p">();</span>  <span class="c1">// Can easily swap implementations</span>
+        <span class="n">Circle</span> <span class="n">circle</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Circle</span> <span class="p">{</span> <span class="n">Radius</span> <span class="p">=</span> <span class="m">5</span> <span class="p">};</span>
+        <span class="n">printer</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="n">circle</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p><strong>Result:</strong> Now you can:</p> <ul> <li>Switch between different printer implementations easily</li> <li>Add new printer types without modifying the <code class="language-plaintext highlighter-rouge">Program</code> class</li> <li>Change implementation by modifying just one line</li> <li>The method signature remains consistent across all implementations</li> </ul> <h3 id="advanced-dependency-injection">Advanced: Dependency Injection</h3> <p>For even better decoupling, use dependency injection:</p> <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IPrinter</span> <span class="n">_printer</span><span class="p">;</span>
+    
+    <span class="k">public</span> <span class="nf">Program</span><span class="p">(</span><span class="n">IPrinter</span> <span class="n">printer</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_printer</span> <span class="p">=</span> <span class="n">printer</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Run</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Circle</span> <span class="n">circle</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Circle</span> <span class="p">{</span> <span class="n">Radius</span> <span class="p">=</span> <span class="m">5</span> <span class="p">};</span>
+        <span class="n">_printer</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="n">circle</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Inject the dependency - Program doesn't create it</span>
+        <span class="n">IPrinter</span> <span class="n">printer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ConsolePrinter</span><span class="p">();</span>
+        <span class="n">Program</span> <span class="n">program</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">(</span><span class="n">printer</span><span class="p">);</span>
+        <span class="n">program</span><span class="p">.</span><span class="nf">Run</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>The <code class="language-plaintext highlighter-rouge">Program</code> class doesn’t even need to know which concrete printer is being used. It only knows about the <code class="language-plaintext highlighter-rouge">IPrinter</code> interface.</p> <hr/> <h2 id="summary">Summary</h2> <table> <thead> <tr> <th>Principle</th> <th>Key Concept</th> <th>Benefit</th> </tr> </thead> <tbody> <tr> <td><strong>SRP</strong></td> <td>One responsibility per class</td> <td>Easy to understand and maintain</td> </tr> <tr> <td><strong>OCP</strong></td> <td>Open for extension, closed for modification</td> <td>Add features without breaking existing code</td> </tr> <tr> <td><strong>LSP</strong></td> <td>Derived classes should substitute base classes</td> <td>Proper inheritance hierarchies</td> </tr> <tr> <td><strong>ISP</strong></td> <td>Segregate interfaces by client needs</td> <td>Classes implement only needed methods</td> </tr> <tr> <td><strong>DIP</strong></td> <td>Depend on abstractions, not concrete classes</td> <td>Flexible and loosely coupled code</td> </tr> </tbody> </table> <h3 id="best-practices">Best Practices</h3> <ol> <li><strong>Apply gradually</strong> - Don’t try to implement all principles at once</li> <li><strong>Use interfaces</strong> - They enable abstraction and flexibility</li> <li><strong>Keep it simple</strong> - Over-engineering with too many abstractions can make code complex</li> <li><strong>Review existing code</strong> - Identify which classes violate which principles</li> <li><strong>Refactor incrementally</strong> - Improve your codebase step by step</li> <li><strong>Consider Factory Pattern</strong> - Combine with SOLID for maximum decoupling</li> <li><strong>Use Dependency Injection</strong> - Frameworks like ASP.NET Core provide built-in DI containers</li> </ol>]]></content><author><name></name></author><category term="commands"/><category term="C#,"/><category term="SOLID"/><summary type="html"><![CDATA[SOLID Principles in C#]]></summary></entry><entry><title type="html">Trying to understand Constructors in c++</title><link href="https://prasadgavande.in/blog/2025/trying_to_understand_constructors_cpp/" rel="alternate" type="text/html" title="Trying to understand Constructors in c++"/><published>2025-10-13T15:09:00+00:00</published><updated>2025-10-13T15:09:00+00:00</updated><id>https://prasadgavande.in/blog/2025/trying_to_understand_constructors_cpp</id><content type="html" xml:base="https://prasadgavande.in/blog/2025/trying_to_understand_constructors_cpp/"><![CDATA[<p>In this post we are trying to understand what is construtors in c++.</p> <p>Lets create a basic example of class in c++</p> <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Student</span>
 <span class="p">{</span>
 <span class="nl">private:</span>
 	<span class="kt">int</span> <span class="n">myId</span><span class="p">;</span>
