@@ -8,6 +8,7 @@ categories: commands
 featured: true
 ---
 
+![SolidPrinciples](https://raw.githubusercontent.com/prasadrgavande/prasadgavande.github.io/refs/heads/master/assets/img/solid.png)
 
 The **SOLID Principles** are five fundamental principles of object-oriented class design introduced by **Robert C. Martin** (also known as "Uncle Bob"). The acronym "SOLID" was later coined by **Michael Feathers**.
 
