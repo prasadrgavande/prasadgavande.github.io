@@ -315,5 +315,13 @@ You now have a portable lab where you can safely practice:
 *   Testing software upgrades.
 *   Experimenting with network configurations.
 
+--- 
+
+My sample project is uploaded to [Github repository](https://github.com/prasadrgavande/ansible-lab.git)
+
+Feel free to download source code and try. 
+
 Happy Automating!
+
+
 
