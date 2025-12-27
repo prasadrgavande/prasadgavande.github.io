@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Trying to understand SOLID Principles with C#
-date: 2025-12-13 15:09:00
-description: SOLID Principles in C#
-tags: C#, SOLID
-categories: commands
+title: Architecting a Local Ansible Lab: A Professional Guide using WSL 2 and Docker
+date: 2025-12-27 15:09:00
+description: Architecting a Local Ansible Lab
+tags: Ansible, DevOps, Automation, IaC
+categories: Automation
 featured: true
 ---
 
