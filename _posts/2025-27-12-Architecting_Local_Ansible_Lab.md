@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Architecting a Local Ansible Lab: A Professional Guide using WSL 2 and Docker
+title: Architecting a Local Ansible Lab - A Professional Guide using WSL 2 and Docker
 date: 2025-12-27 15:09:00
 description: Architecting a Local Ansible Lab
 tags: Ansible, DevOps, Automation, IaC
