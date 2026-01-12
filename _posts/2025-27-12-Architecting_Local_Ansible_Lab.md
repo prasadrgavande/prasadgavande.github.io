@@ -5,7 +5,7 @@ date: 2025-12-27 15:09:00
 description: Architecting a Local Ansible Lab
 tags: Ansible, DevOps, Automation, IaC
 categories: Automation
-featured: true
+featured: false
 ---
 
 ![Ansible](https://raw.githubusercontent.com/prasadrgavande/prasadgavande.github.io/refs/heads/master/assets/img/7-Ansible-guide/Ansible.png)
