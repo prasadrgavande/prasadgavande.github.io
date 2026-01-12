@@ -5,7 +5,7 @@ date: 2025-12-13 15:09:00
 description: SOLID Principles in C#
 tags: C#, SOLID
 categories: commands
-featured: true
+featured: false
 ---
 
 ![SolidPrinciples](https://raw.githubusercontent.com/prasadrgavande/prasadgavande.github.io/refs/heads/master/assets/img/solid.png)
