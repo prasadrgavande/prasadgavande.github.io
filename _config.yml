@@ -47,6 +47,7 @@ footer_fixed: true
 search_enable: true
 socials_in_search: true
 posts_in_search: true
+bib_search: true
 
 # Dimensions
 max_width: 800px
