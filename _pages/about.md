@@ -13,23 +13,22 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-I am a Hong Kong–based Senior Software Engineer with over 12 years of professional experience designing, developing, and supporting mission-critical technology platforms for the global investment banking and capital markets industry. My career has been built around one core principle: creating software systems that financial institutions can trust to operate accurately, securely, and at scale, every single day.
+I am a Hong Kong–based Senior Software Engineer with 12+ years of experience building and modernizing mission-critical systems for global investment banks and capital markets.
 
-Throughout my career, I have specialized in the development of Post-Trade, Settlement, and Compliance systems — the backbone of every investment bank. These systems ensure that trades are confirmed, settled, reported to regulators, and reconciled correctly across exchanges, custodians, and internal platforms. When these systems fail, financial risk, regulatory breaches, and reputational damage follow. My role has always been to make sure they do not fail.
+I specialize in designing, developing, and optimizing Post-Trade, Settlement, and Compliance platforms used by front-office, middle-office, and operations teams. My work supports high-volume financial transactions, regulatory reporting, SWIFT messaging, and CCASS settlement workflows — where accuracy, performance, and reliability are non-negotiable.
 
-I currently work with Daiwa Capital Markets in Hong Kong, where I design and maintain high-performance financial systems using C#, C++, SQL, and cloud-based infrastructure. My work supports critical business functions including SWIFT messaging, CCASS settlement processing, regulatory reporting, compliance automation, and trade lifecycle management. These platforms handle millions of transactions, operate under strict regulatory scrutiny, and require near-zero downtime — environments where precision and engineering discipline matter more than anything else.
+Currently, I work with Daiwa Capital Markets in Hong Kong, developing and supporting large-scale financial systems using C#, C++, SQL, and cloud-based infrastructure. I have delivered high-impact solutions including automated compliance platforms, trade migration engines, SWIFT processing systems, and settlement reconciliation tools that handle millions of records with zero data loss.
 
-Over the years, I have delivered solutions across the full lifecycle of financial software systems — from architecture and development to production support, optimization, and modernization. I have built compliance platforms that automate employee trading approvals, designed migration engines that move millions of legacy trades into modern settlement platforms with 100% accuracy, and modernized SWIFT processing engines to increase performance while maintaining regulatory standards. I have also led cloud migration initiatives, moving on-premise compliance systems to AWS to improve scalability, reliability, and operational efficiency.
+My technical expertise includes:
+• C# and C++ enterprise application development  
+• Post-Trade, Settlement, SWIFT, CCASS and Bloomberg integration  
+• SQL Server and Oracle performance optimization  
+• Cloud migration (AWS), CI/CD and automation  
+• Regulatory reporting and compliance systems  
 
-My technical expertise spans the full backend and integration stack required in modern financial institutions. I work extensively with C#, C++, .NET, SQL Server, Oracle, REST APIs, shell scripting, Python, and enterprise messaging systems. I also bring strong DevOps and automation experience, having implemented CI/CD pipelines using Jenkins and Ansible to streamline deployment, reduce risk, and increase release reliability across production banking systems.
+What sets me apart is my ability to bridge deep technical engineering with real business outcomes — reducing operational risk, improving processing speed, and ensuring regulatory accuracy in complex banking environments.
 
-What truly differentiates me, however, is not just my technical skillset — it is my deep understanding of how technology and finance intersect. I do not build software in isolation. I work closely with Operations, Compliance, Finance, and Trading teams to ensure that the systems I deliver solve real business problems: reducing manual work, minimizing risk, improving regulatory accuracy, and enabling smoother daily operations. This ability to translate complex business requirements into reliable, scalable technical solutions has been a defining feature of my career.
+I am always open to exciting opportunities, consulting, or collaboration in Investment Banking, FinTech, and Financial Systems Engineering.
 
-Earlier in my professional journey, I also gained experience building enterprise workflow and collaboration platforms using technologies such as SharePoint, JIRA, Confluence, and ServiceNow. These experiences helped me develop a strong foundation in business process automation, stakeholder communication, and enterprise system design — skills that continue to add value in today’s highly regulated banking environments.
-
-Today, my focus is firmly on financial systems engineering, investment banking technology, and fintech innovation. I am passionate about building robust, well-architected software that supports global markets and enables financial institutions to operate with confidence, speed, and regulatory integrity. Whether it is improving settlement processing, optimizing database performance, automating compliance workflows, or modernizing legacy systems, I take pride in delivering solutions that make a measurable impact.
-
-I am always open to engaging with forward-thinking teams, organizations, and professionals working in investment banking, capital markets, and financial technology. If you are looking for an experienced engineer who understands both technology and the realities of financial operations, I would be delighted to connect.
-
-📧 prasad.gavande@live.com
+📧 prasad.gavande@live.com  
 📞 +852 54931218
