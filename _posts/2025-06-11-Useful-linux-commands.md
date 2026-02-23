@@ -3,7 +3,9 @@ layout: post
 title: Useful linux commands
 date: 2025-06-11 15:09:00
 description: Some essential and useful linux commands for day to day operations
-tags: linux, unix, commands
+tags: linux
+unix
+commands
 categories: commands
 featured: false
 ---
