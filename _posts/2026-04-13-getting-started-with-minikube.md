@@ -8,8 +8,6 @@ categories: devops
 featured: false
 ---
 
-# Getting Started with Minikube on Windows 11 Using Docker Desktop
-
 ![Banner: Minikube on Windows](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/10-GettingStartedWithMinikube/minikube-banner.png?raw=true)
 
 Minikube is a lightweight tool that lets you run a single‑node Kubernetes cluster locally on your laptop, which is perfect for learning Kubernetes and testing workloads before you deploy to a real cluster.[web:17]  
