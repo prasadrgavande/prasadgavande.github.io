@@ -10,20 +10,20 @@ featured: false
 
 ![Banner: Minikube on Windows](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/10-GettingStartedWithMinikube/minikube-banner.png?raw=true)
 
-Minikube is a lightweight tool that lets you run a single‑node Kubernetes cluster locally on your laptop, which is perfect for learning Kubernetes and testing workloads before you deploy to a real cluster.[web:17]  
-In this guide, we will walk step by step through installing Minikube on Windows 11 using Docker Desktop as the container runtime and then opening the Kubernetes Dashboard UI.[web:23]
+Minikube is a lightweight tool that lets you run a single‑node Kubernetes cluster locally on your laptop, which is perfect for learning Kubernetes and testing workloads before you deploy to a real cluster.
+In this guide, we will walk step by step through installing Minikube on Windows 11 using Docker Desktop as the container runtime and then opening the Kubernetes Dashboard UI.
 
 ---
 
 ## What Is Minikube (and Why Use It)?
 
-Minikube creates a local Kubernetes cluster on your machine so you can experiment without provisioning cloud infrastructure or a multi‑node setup.[web:17]  
-By default it starts a single‑node cluster that behaves like any other Kubernetes cluster, so you can use real `kubectl` commands, manifests, and dashboards for development and learning.[web:26]
+Minikube creates a local Kubernetes cluster on your machine so you can experiment without provisioning cloud infrastructure or a multi‑node setup.
+By default it starts a single‑node cluster that behaves like any other Kubernetes cluster, so you can use real `kubectl` commands, manifests, and dashboards for development and learning
 
 Typical use cases:
 
 - Learning core Kubernetes concepts (pods, deployments, services).  
-- Developing and testing applications locally before pushing to a remote cluster.[web:23]  
+- Developing and testing applications locally before pushing to a remote cluster.
 - Practicing administration tasks such as scaling, rolling updates, and monitoring.
 
 ---
@@ -36,9 +36,9 @@ This post assumes the following environment:
 - Docker Desktop installed and running  
 - Minikube installed via Chocolatey  
 - `kubectl` (Kubernetes CLI) installed via Chocolatey  
-- Kubernetes Dashboard accessed via `minikube dashboard`[web:19][web:25]
+- Kubernetes Dashboard accessed via `minikube dashboard`
 
-You can adapt the steps for Windows 10 as long as the system meets Minikube’s CPU, memory, and virtualization requirements.[web:23]
+You can adapt the steps for Windows 10 as long as the system meets Minikube’s CPU, memory, and virtualization requirements.
 
 ---
 
@@ -48,7 +48,7 @@ Before installing Minikube, verify a few basic requirements.
 
 ### 0.1 Verify virtualization and hypervisor
 
-Minikube needs hardware virtualization (Intel VT‑x / AMD‑V) enabled in BIOS, and Docker Desktop on Windows usually relies on WSL2, which also requires virtualization support.[web:30]
+Minikube needs hardware virtualization (Intel VT‑x / AMD‑V) enabled in BIOS, and Docker Desktop on Windows usually relies on WSL2, which also requires virtualization support.
 
 1. Open **Command Prompt** as **Administrator**.  
 2. Run:
@@ -68,7 +68,7 @@ This confirms that virtualization is enabled and a hypervisor is present.
 
 ### 0.2 Install and start Docker Desktop
 
-The Docker driver for Minikube uses an existing Docker installation instead of creating its own VM, which is recommended on Windows.[web:30]
+The Docker driver for Minikube uses an existing Docker installation instead of creating its own VM, which is recommended on Windows.
 
 1. Download Docker Desktop for Windows from the official Docker website and install it (enable WSL2 integration during setup if prompted).  
 2. After installation, start **Docker Desktop** and wait until the status shows **Running**.
@@ -79,7 +79,7 @@ You will later see Minikube appear as a container inside Docker Desktop once the
 
 ## Step 1 – Install Chocolatey (Windows Package Manager)
 
-Chocolatey is a popular package manager on Windows that makes it easy to install command‑line tools such as `kubectl` and Minikube.[web:18]
+Chocolatey is a popular package manager on Windows that makes it easy to install command‑line tools such as `kubectl` and Minikube.
 
 1. Open **PowerShell** as **Administrator** (right‑click → *Run as administrator*).  
 2. Run the following script to install Chocolatey:
@@ -99,7 +99,7 @@ Chocolatey is a popular package manager on Windows that makes it easy to install
 
 ## Step 2 – Install `kubectl` Using Chocolatey
 
-`kubectl` is the standard command‑line tool for interacting with Kubernetes clusters.[web:26]
+`kubectl` is the standard command‑line tool for interacting with Kubernetes clusters.
 
 1. In **Command Prompt** (Administrator), run:
 
@@ -128,7 +128,7 @@ You should see the client version printed without any errors.
 
 ## Step 3 – Prepare the Kubernetes Config Folder
 
-Kubernetes stores cluster connection information in a **kubeconfig** file, usually located at `C:\Users\<username>\.kube\config` on Windows. When Minikube starts, it automatically populates this file with the correct cluster and credentials.[web:18]
+Kubernetes stores cluster connection information in a **kubeconfig** file, usually located at `C:\Users\<username>\.kube\config` on Windows. When Minikube starts, it automatically populates this file with the correct cluster and credentials.
 
 1. In **Command Prompt** (Administrator), switch to your user profile:
 
@@ -184,7 +184,7 @@ You should see a version string for Minikube, confirming it is installed.
 
 ## Step 5 – Start Minikube with the Docker Driver
 
-Minikube supports several “drivers” that control where the Kubernetes node actually runs (Docker, Hyper‑V, VirtualBox, etc.). Here we will use the **Docker driver**, which runs Kubernetes inside a Docker container.[web:30]
+Minikube supports several “drivers” that control where the Kubernetes node actually runs (Docker, Hyper‑V, VirtualBox, etc.). Here we will use the **Docker driver**, which runs Kubernetes inside a Docker container.
 
 > Make sure Docker Desktop is running before this step.
 
@@ -232,7 +232,7 @@ Minikube uses this container as the single Kubernetes node in your cluster.
 
 ## Step 7 – Open the Kubernetes Dashboard
 
-Minikube ships with integrated support for the Kubernetes Dashboard — a web UI that lets you visualize resources, deploy apps, and manage your cluster.[web:19][web:28]
+Minikube ships with integrated support for the Kubernetes Dashboard — a web UI that lets you visualize resources, deploy apps, and manage your cluster.
 
 1. In **Command Prompt**, run:
 
@@ -306,7 +306,7 @@ kubectl config get-contexts
 kubectl config use-context minikube
 ```
 
-These commands let you control the lifecycle of your local Kubernetes cluster without affecting other contexts or remote clusters.[web:23][web:26]
+These commands let you control the lifecycle of your local Kubernetes cluster without affecting other contexts or remote clusters.
 
 ---
 
