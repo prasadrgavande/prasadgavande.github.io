@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Getting Started with Minikube on Windows 11 Using Docker Desktop
+title: Run Kubernetes Locally: Minikube + Docker Desktop on Windows
 date: 2026-04-13 15:09:00
 description: Tutorial for Minikbue installation
 tags: DevOps, Kubernates
