@@ -7,8 +7,7 @@ tags: DevOps, Kubernates
 categories: devops
 featured: false
 ---
-
-![Banner: Minikube on Windows](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/10-GettingStartedWithMinikube/minikube-banner.png?raw=true)
+<img width="550" height="300" src="https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/10-GettingStartedWithMinikube/minikube-banner.png?raw=true" />
 
 Minikube is a lightweight tool that lets you run a single‑node Kubernetes cluster locally on your laptop, which is perfect for learning Kubernetes and testing workloads before you deploy to a real cluster.
 In this guide, we will walk step by step through installing Minikube on Windows 11 using Docker Desktop as the container runtime and then opening the Kubernetes Dashboard UI.
