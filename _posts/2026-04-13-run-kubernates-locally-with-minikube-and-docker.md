@@ -41,11 +41,11 @@ You can adapt the steps for Windows 10 as long as the system meets Minikube’s 
 
 ---
 
-## Step 0 – Check Prerequisites
+## Check Prerequisites
 
 Before installing Minikube, verify a few basic requirements.
 
-### 0.1 Verify virtualization and hypervisor
+### Verify virtualization and hypervisor
 
 Minikube needs hardware virtualization (Intel VT‑x / AMD‑V) enabled in BIOS, and Docker Desktop on Windows usually relies on WSL2, which also requires virtualization support.
 
@@ -65,7 +65,7 @@ Minikube needs hardware virtualization (Intel VT‑x / AMD‑V) enabled in BIOS,
 
 This confirms that virtualization is enabled and a hypervisor is present.
 
-### 0.2 Install and start Docker Desktop
+### Install and start Docker Desktop
 
 The Docker driver for Minikube uses an existing Docker installation instead of creating its own VM, which is recommended on Windows.
 
@@ -76,7 +76,7 @@ You will later see Minikube appear as a container inside Docker Desktop once the
 
 ---
 
-## Step 1 – Install Chocolatey (Windows Package Manager)
+## Install Chocolatey (Windows Package Manager)
 
 Chocolatey is a popular package manager on Windows that makes it easy to install command‑line tools such as `kubectl` and Minikube.
 
@@ -96,7 +96,7 @@ Chocolatey is a popular package manager on Windows that makes it easy to install
 
 ---
 
-## Step 2 – Install `kubectl` Using Chocolatey
+## Install `kubectl` Using Chocolatey
 
 `kubectl` is the standard command‑line tool for interacting with Kubernetes clusters.
 
@@ -125,7 +125,7 @@ You should see the client version printed without any errors.
 
 ---
 
-## Step 3 – Prepare the Kubernetes Config Folder
+## Prepare the Kubernetes Config Folder
 
 Kubernetes stores cluster connection information in a **kubeconfig** file, usually located at `C:\Users\<username>\.kube\config` on Windows. When Minikube starts, it automatically populates this file with the correct cluster and credentials.
 
@@ -154,7 +154,7 @@ Minikube will later update this `config` file with the cluster details when the 
 
 ---
 
-## Step 4 – Install Minikube Using Chocolatey
+## Install Minikube Using Chocolatey
 
 Now you are ready to install Minikube itself.
 
@@ -181,7 +181,7 @@ You should see a version string for Minikube, confirming it is installed.
 
 ---
 
-## Step 5 – Start Minikube with the Docker Driver
+## Start Minikube with the Docker Driver
 
 Minikube supports several “drivers” that control where the Kubernetes node actually runs (Docker, Hyper‑V, VirtualBox, etc.). Here we will use the **Docker driver**, which runs Kubernetes inside a Docker container.
 
@@ -207,9 +207,9 @@ This means your local Kubernetes cluster is up and your kubeconfig has been upda
 
 ---
 
-## Step 6 – Verify the Cluster and Check Docker Desktop
+## Verify the Cluster and Check Docker Desktop
 
-### 6.1 Confirm the Kubernetes node
+### Confirm the Kubernetes node
 
 Run:
 
@@ -219,17 +219,16 @@ kubectl get nodes
 
 You should see a node named `minikube` with status `Ready`, confirming that the control‑plane node is up and responding.
 
-### 6.2 Check the Minikube container in Docker Desktop
+### Check the Minikube container in Docker Desktop
 
 Open **Docker Desktop** and go to the **Containers** tab. You should see a running container named `minikube` managed by Docker Desktop.
-
-![Minikube container running in Docker Desktop](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/10-GettingStartedWithMinikube/12a-Minikube-in-docker.png?raw=true)
+<img src = "https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/10-GettingStartedWithMinikube/12a-Minikube-in-docker.png?raw=true" class="img-fluid" />
 
 Minikube uses this container as the single Kubernetes node in your cluster.
 
 ---
 
-## Step 7 – Open the Kubernetes Dashboard
+## Open the Kubernetes Dashboard
 
 Minikube ships with integrated support for the Kubernetes Dashboard — a web UI that lets you visualize resources, deploy apps, and manage your cluster.
 
@@ -239,7 +238,7 @@ Minikube ships with integrated support for the Kubernetes Dashboard — a web UI
    minikube dashboard
    ```
 
-![Running minikube dashboard command](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/10-GettingStartedWithMinikube/13-minikube-dashboard-cmd.png?raw=true)
+<img src="https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/10-GettingStartedWithMinikube/13-minikube-dashboard-cmd.png?raw=true" class="img-fluid" />
 
 2. Minikube will enable the dashboard add‑on if needed, start a local HTTP proxy, and open your default browser to a URL similar to:
 
@@ -257,7 +256,7 @@ You can keep this dashboard open while you deploy workloads; it will update as n
 
 ---
 
-## Step 8 – Deploy Your First Application 
+## Deploy Your First Application 
 
 To actually *see* something in the dashboard, let’s deploy a simple NGINX web server.
 
@@ -292,7 +291,7 @@ Minikube will open the service URL in your browser so you can see the default NG
 
 ---
 
-## Step 9 – Managing Your Minikube Cluster
+## Managing Your Minikube Cluster
 
 Here are some useful day‑to‑day Minikube commands:
 
