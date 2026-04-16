@@ -248,7 +248,7 @@ Minikube ships with integrated support for the Kubernetes Dashboard — a web UI
 
 3. In the Dashboard UI, make sure the namespace is set to `default`. On a fresh cluster, you will see a message like **“There is nothing to display here”** because no workloads are deployed yet.
 
-![Kubernetes Dashboard showing an empty default namespace](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/10-GettingStartedWithMinikube/14-dashboard.png?raw=true)
+<img src="https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/10-GettingStartedWithMinikube/14-dashboard.png?raw=true" class="img-fluid" />
 
 You can keep this dashboard open while you deploy workloads; it will update as new pods, deployments, and services are created.
 
