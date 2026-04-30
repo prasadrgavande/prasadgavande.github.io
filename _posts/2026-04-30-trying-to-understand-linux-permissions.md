@@ -7,7 +7,7 @@ tags: linux unix
 categories: commands
 featured: false
 ---
-<img src="../assets/img/11-trying-to-understand-linux-permissions/banner.png" class="img-fluid" />
+<img src="..\assets\img\11-trying-to-understand-linux-permissions\banner.png" class="img-fluid" />
 
 ## Why permissions matter
 
