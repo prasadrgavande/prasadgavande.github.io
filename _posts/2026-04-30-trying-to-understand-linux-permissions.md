@@ -9,6 +9,8 @@ featured: false
 ---
 <img src="../assets/img/11-trying-to-understand-linux-permissions/banner.png" class="img-fluid" />
 
+{% include figure.html path="/assets/img/11-trying-to-understand-linux-permissions/banner.png" title="map" class="img-fluid rounded z-depth-1" %}
+
 ## Why permissions matter
 
 On a multi‑user system like Linux, **permissions control who can access which files and what they can do with them**.
