@@ -7,7 +7,7 @@ tags: linux unix
 categories: commands
 featured: false
 ---
-<img src="..\assets\img\11-trying-to-understand-linux-permissions\banner.png" class="img-fluid" />
+<img src="../assets/img/11-trying-to-understand-linux-permissions/banner.png" class="img-fluid" />
 
 ## Why permissions matter
 
@@ -70,7 +70,7 @@ drwxr-xr-x 5 root    root  4096 Dec 27 17:25 my-ansible-lab
 
 ## Understanding `r`, `w`, `x`: what they actually do
 
-<img src="..\assets\img\11-trying-to-understand-linux-permissions\permissions.png" class="img-fluid" />
+<img src="../assets/img/11-trying-to-understand-linux-permissions/permissions.png" class="img-fluid" />
 
 <img src="..\assets\img\11-trying-to-understand-linux-permissions\permissions2.png" class="img-fluid" />
 
