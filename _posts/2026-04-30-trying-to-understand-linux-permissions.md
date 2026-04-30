@@ -1,12 +1,14 @@
 ---
 layout: post
 title: Trying to understand Permissions in Linux
-date: 2025-06-11 15:09:00
+date: 2026-04-30 15:09:00
 description: A practical, example‑driven guide to Linux file permissions
 tags: linux unix
 categories: commands
 featured: false
 ---
+![banner](assets\img\11-trying-to-understand-linux-permissions\banner.png)
+
 
 ## 1. Why permissions matter
 
