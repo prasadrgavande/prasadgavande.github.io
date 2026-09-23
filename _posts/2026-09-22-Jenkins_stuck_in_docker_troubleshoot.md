@@ -3,8 +3,8 @@ layout: post
 title: Jenkins Stuck on "Getting Ready to Work" - Troubleshooting Startup Hangs in Docker
 date: 2026-09-22 15:09:00
 description: Jenkins Stuck on "Getting Ready to Work" - Troubleshooting Startup Hangs in Docker
-tags: devops
-categories: devops
+tags: DevOps, Jenkins, troubleshooting, Docker 
+categories: DevOps
 featured: false
 ---
 ![CoverImage](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/12-Jenkins-stuck/JenkinsStuckCoverImage.png?raw=true)
