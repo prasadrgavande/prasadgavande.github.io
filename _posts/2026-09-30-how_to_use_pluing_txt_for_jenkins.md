@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to Use `plugins.txt` for Jenkins
+title: How to Use plugins.txt for Jenkins
 date: 2026-09-22 15:09:00
 description: simple guide which explain How to Use `plugins.txt` for Jenkins
 tags: DevOps, Jenkins, Docker
