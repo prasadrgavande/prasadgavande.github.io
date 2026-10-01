@@ -7,7 +7,9 @@ tags: DevOps, Jenkins, Docker
 categories: DevOps
 featured: false
 ---
-![CoverImage](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/13-jenkins_plugins/cover.png?raw=true)
+<p align="center">
+  <img src="https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/13-jenkins_plugins/cover.png?raw=true" alt="CoverImage">
+</p>
 
 ## How to Use `plugins.txt` for Jenkins
 
