@@ -6,6 +6,7 @@ description: Stop CRLF vs LF errors in Git. how a .gitattributes line-ending pol
 tags: DevOps, git
 categories: DevOps
 featured: false
+giscus_comments: true
 ---
 
 <p align="center">
