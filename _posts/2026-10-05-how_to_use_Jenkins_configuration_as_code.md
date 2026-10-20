@@ -6,6 +6,7 @@ description: Step by step guide to use Jenkins configuration as code
 tags: DevOps, Jenkins, Docker
 categories: DevOps
 featured: false
+giscus_comments: true
 ---
 
 <p align="center">
