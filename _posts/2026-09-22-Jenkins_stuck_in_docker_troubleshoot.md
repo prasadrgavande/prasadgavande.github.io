@@ -6,6 +6,7 @@ description: Jenkins Stuck on "Getting Ready to Work" - Troubleshooting Startup 
 tags: DevOps, Jenkins
 categories: DevOps
 featured: false
+giscus_comments: true
 ---
 ![CoverImage](https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/12-Jenkins-stuck/JenkinsStuckCoverImage.png?raw=true)
 
