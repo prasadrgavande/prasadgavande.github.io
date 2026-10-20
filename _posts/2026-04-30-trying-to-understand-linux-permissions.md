@@ -6,6 +6,7 @@ description: A practical, example‑driven guide to Linux file permissions
 tags: linux unix
 categories: commands
 featured: false
+giscus_comments: true
 ---
 
 <img src="https://github.com/prasadrgavande/prasadgavande.github.io/blob/master/assets/img/11-trying-to-understand-linux-permissions/banner.png?raw=true" class="img-fluid">
